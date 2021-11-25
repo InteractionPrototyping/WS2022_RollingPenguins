@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule, Title } from '@angular/platform-browser';
-import { GoogleMapsModule } from '@angular/google-maps'
+import { GoogleMapsModule } from '@angular/google-maps';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -18,6 +18,7 @@ import { EventsComponent } from './events/events.component';
 import { MapComponent } from './map/map.component';
 import { PersonalComponent } from './personal/personal.component';
 import { ExploreComponent } from './explore/explore.component';
+import { DiscoverComponent } from './discover/discover.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ExploreComponent } from './explore/explore.component';
     EventsComponent,
     MapComponent,
     PersonalComponent,
-    ExploreComponent
+    ExploreComponent,
+    DiscoverComponent
   ],
   imports: [
     BrowserModule,
