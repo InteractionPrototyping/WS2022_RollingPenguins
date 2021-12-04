@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EventCardComponent } from '../event-card/event-card.component';
 
 
 @Component({

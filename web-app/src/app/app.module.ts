@@ -19,6 +19,7 @@ import { MapComponent } from './map/map.component';
 import { PersonalComponent } from './personal/personal.component';
 import { ExploreComponent } from './explore/explore.component';
 import { DiscoverComponent } from './discover/discover.component';
+import { EventCardComponent } from './event-card/event-card.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { DiscoverComponent } from './discover/discover.component';
     MapComponent,
     PersonalComponent,
     ExploreComponent,
-    DiscoverComponent
+    DiscoverComponent,
+    EventCardComponent
   ],
   imports: [
     BrowserModule,

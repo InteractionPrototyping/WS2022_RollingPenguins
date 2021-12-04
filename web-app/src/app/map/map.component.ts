@@ -33,8 +33,9 @@ export class MapComponent implements OnInit {
       }
     })
   }
+
   ngAfterViewChecked(): void {
-    this.addMarker();
+    //this.addMarker();
   }
   @Input() addMarker() {
     
