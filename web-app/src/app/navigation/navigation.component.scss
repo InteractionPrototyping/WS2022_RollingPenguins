@@ -1,12 +1,30 @@
 @import '~@angular/material/theming';
 @import '~ngx-bottom-nav/theming';
+
 mat-toolbar {
     position: fixed;
     top: 0;
     z-index: 100;
 }
+#titlebar-placeholder {
+    display: block;
+    height: 56px;
+    width: 100%;
+}
 ngx-bottom-nav {
     position: fixed;
     bottom: 0;
     z-index: 100;
+}
+ngx-bottom-nav {
+    padding: 8px 0px;
+    background: #9c27b0;
+    mat-icon {
+        padding: 2px 16px;
+        margin-bottom: 4px;
+    }
+    mat-icon.active-mat-icon {
+        background-color: #a553b4;
+        border-radius: 50px;
+    }
 }

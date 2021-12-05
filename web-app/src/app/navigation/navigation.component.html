@@ -1,22 +1,22 @@
-<mat-toolbar color="primary">
+<mat-toolbar color="black">
   <span id="current-title">{{ current_title }}</span>
 </mat-toolbar>
+<div id='titlebar-placeholder'></div>
 
 <ngx-bottom-nav color="primary">
-  <button ngx-bottom-nav label="Explore" routerLink="/explore" id="custom-styled-ngx-nav-button" (click)="setDocTitle('Explore')">
-    <mat-icon ngxBottomNavIcon>search</mat-icon>
+  <button ngx-bottom-nav label="Explore" routerLink="/explore" id="custom-styled-ngx-nav-button" (click)="setDocTitle('Explore')" id="Explore">
+    <mat-icon ngxBottomNavIcon class="material-icons-outlined">category</mat-icon>
   </button>
   
-  <button ngx-bottom-nav label="Map" routerLink="/map" id="custom-styled-ngx-nav-button" (click)="setDocTitle('Map')">
-    <mat-icon ngxBottomNavIcon>map</mat-icon>
+  <button ngx-bottom-nav label="Map" routerLink="/map" id="custom-styled-ngx-nav-button" (click)="setDocTitle('Map')" id="Map">
+    <mat-icon ngxBottomNavIcon class="material-icons-outlined">explore</mat-icon>
   </button>
   
-  <button ngx-bottom-nav label="My Events" routerLink="/events" id="custom-styled-ngx-nav-button" (click)="setDocTitle('My Events')">
-    <mat-icon ngxBottomNavIcon>local_activity</mat-icon>
+  <button ngx-bottom-nav label="My Events" routerLink="/events" id="custom-styled-ngx-nav-button" (click)="setDocTitle('My Events')" id="MyEvents">
+    <mat-icon ngxBottomNavIcon class="material-icons-outlined">local_activity</mat-icon>
   </button>
 
-  <button ngx-bottom-nav label="Personal" routerLink="/personal" id="custom-styled-ngx-nav-button" style="color: white" (click)="setDocTitle('Personal')">
-    <mat-icon ngxBottomNavIcon>face</mat-icon>
+  <button ngx-bottom-nav label="Personal" routerLink="/personal" id="custom-styled-ngx-nav-button" style="color: white" (click)="setDocTitle('Personal')" id="Personal">
+    <mat-icon ngxBottomNavIcon class="material-icons-outlined">account_circle</mat-icon>
   </button>
 </ngx-bottom-nav>
-  

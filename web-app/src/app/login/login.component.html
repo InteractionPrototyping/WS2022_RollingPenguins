@@ -1,0 +1,38 @@
+<main id="login" *ngIf="requiresLogin">
+
+    <mat-form-field appearance="fill">
+        <mat-label>Enter your email</mat-label>
+        <input matInput placeholder="pat@example.com" [formControl]="email" required>
+        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+    <mat-label>Enter your password</mat-label>
+    <input matInput [type]="hide ? 'password' : 'text'">
+    <button mat-icon-button matSuffix (click)="hidePswd = !hidePswd" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hidePswd">
+        <mat-icon>{{hidePswd ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </button>
+    </mat-form-field>
+
+    <div>
+        <button ngx-bottom-nav label="Register" id="custom-styled-ngx-nav-button" (click)="register()">
+            <mat-icon ngxBottomNavIcon>search</mat-icon>
+        </button>
+        <button ngx-bottom-nav label="Login" routerLink="/explore" id="custom-styled-ngx-nav-button" (click)="hide()">
+            <mat-icon ngxBottomNavIcon>search</mat-icon>
+        </button>
+    </div>
+</main>
+
+<main id="register" *ngIf="requiresRegister">
+    <input type="text" name="Email" value="" size="30" maxlength="50">
+    <input type="password" name="Password" value="" size="30" maxlength="50">
+    <div> 
+        <button ngx-bottom-nav label="I have already an account" id="custom-styled-ngx-nav-button" (click)="login()">
+            <mat-icon ngxBottomNavIcon>search</mat-icon>
+        </button>
+        <button ngx-bottom-nav label="Register" routerLink="/explore" id="custom-styled-ngx-nav-button" (click)="hide()">
+            <mat-icon ngxBottomNavIcon>search</mat-icon>
+        </button>
+    </div>
+</main>

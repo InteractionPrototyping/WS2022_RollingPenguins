@@ -1,6 +1,13 @@
 html, body {
     background-color: black;
+    height: 100vh;
+    margin-bottom: 720px;
 }
 * {
     overflow: hidden;
+}
+#nav-placeholder {
+    display: block;
+    height: 72px;
+    width: 100%;
 }

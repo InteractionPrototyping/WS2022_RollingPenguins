@@ -15,7 +15,6 @@ export class MapComponent implements OnInit {
   markers = [] as any;
 
   options: google.maps.MapOptions = {
-    mapTypeId: 'hybrid',
     zoomControl: false,
     scrollwheel: true,
     disableDoubleClickZoom: false,
