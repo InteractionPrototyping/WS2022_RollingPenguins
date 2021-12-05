@@ -18,6 +18,7 @@ export class LoginComponent implements OnInit {
   }
   hide() {
     this.requiresLogin = false;
+    document.getElementById('router-outlet')?.classList.remove('hidden');
   }
   register() {
     this.requiresRegister = true;

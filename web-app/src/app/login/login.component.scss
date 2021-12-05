@@ -1,4 +1,4 @@
-#login, #register {
+#login {
     z-index: 99999;
     display: block;
     position: fixed;
@@ -7,10 +7,48 @@
     height: 100vh;
     width: 100vw;
     overflow: hidden;
-    background-color: white;
-    div {
+
+    padding: 0 24px;
+    padding-top: 20vh;
+
+    #app-icon {
+        position: relative;
+        left: -24px;
+        width: 100%;
+        padding: 32px 0;
+        text-align: center;
+        font-size: 100px;
+        color: black;
+        display: block;
+        margin: auto;
+    }
+    #app-title {
+        position: relative;
+        left: -24px;
+        width: 100%;
+        padding-bottom: 64px;
+        text-align: center;
+        font-size: 32px;
+        color: black;
+        display: block;
+        margin: auto;
+        text-transform: uppercase;
+        font-weight: bolder;
+    }
+
+    
+    #login-cred {
         display: flex;
-        justify-content: space-around;
+        flex-direction: column;
+        .mat-form-field {
+            width: calc(100% - 48px);
+        }
+
+    }
+    #login-buttons {
+        width: calc(100% - 48px);
+        display: flex;
+        justify-content: flex-end;
         flex-direction: row;
     }
 }

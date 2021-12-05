@@ -9,4 +9,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'web-app';
+  showApp: boolean = false ; // hidden by default
 }
