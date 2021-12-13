@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: 'discover', component: DiscoverComponent },
   { path: 'map', component: MapComponent },
   { path: 'events', component: EventsComponent },
-  { path: 'personal', component: PersonalComponent },
+  { path: 'profile', component: PersonalComponent },
   { path: '**', redirectTo: 'explore' },
 ];
 

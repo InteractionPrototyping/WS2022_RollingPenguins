@@ -26,8 +26,8 @@ export class NavigationComponent implements OnInit {
     document.getElementById('MyEvents')?.children[0].children[0].classList.remove('active-mat-icon');
     document.getElementById('MyEvents')?.children[0].children[0].classList.add('material-icons-outlined');
 
-    document.getElementById('Personal')?.children[0].children[0].classList.remove('active-mat-icon');
-    document.getElementById('Personal')?.children[0].children[0].classList.add('material-icons-outlined');
+    document.getElementById('Profile')?.children[0].children[0].classList.remove('active-mat-icon');
+    document.getElementById('Profile')?.children[0].children[0].classList.add('material-icons-outlined');
 
     document.getElementById(title.replace(/\s/g, ""))?.children[0].children[0].classList.remove('material-icons-outlined');
     document.getElementById(title.replace(/\s/g, ""))?.children[0].children[0].classList.add('active-mat-icon');
