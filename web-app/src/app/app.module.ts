@@ -4,6 +4,7 @@ import { GoogleMapsModule } from '@angular/google-maps';
 
 
 import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BottomNavModule } from 'ngx-bottom-nav';
@@ -33,6 +34,10 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import * as moment from 'moment';
 import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
+import { MatBadgeModule } from '@angular/material/badge';
+import { EventDetailPageComponent } from './event-detail-page/event-detail-page.component';
+import { EventMapCardComponent } from './event-map-card/event-map-card.component';
+
 
 
 @NgModule({
@@ -47,7 +52,9 @@ import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
     DiscoverComponent,
     EventCardComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    EventDetailPageComponent,
+    EventMapCardComponent
   ],
   imports: [
     BrowserModule,
@@ -66,7 +73,8 @@ import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
     MatSelectModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    NgxMaterialTimepickerModule
+    NgxMaterialTimepickerModule,
+    MatBadgeModule
   ],
   providers: [
     Title

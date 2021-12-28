@@ -1,6 +1,18 @@
-<mat-toolbar color="black">
-  <span id="current-title">{{ current_title }}</span>
+<mat-toolbar>
+  <button mat-icon-button class="subpage" id="subpage" [routerLink]="back" (click)="hideBackButton()">
+   <mat-icon>arrow_back</mat-icon>
+ </button>
+ <span id="current-title">{{ current_title }}</span>
+ <span class="nav-spacer"></span>
+ <button mat-icon-button *ngIf="subpage">
+   <mat-icon>favorite</mat-icon>
+ </button>
+ <button mat-icon-button *ngIf="subpage">
+  <mat-icon>share</mat-icon>
+</button>
 </mat-toolbar>
+
+
 <div id='titlebar-placeholder'></div>
 
 <ngx-bottom-nav color="primary">
@@ -13,7 +25,7 @@
   </button>
   
   <button ngx-bottom-nav label="My Events" routerLink="/events" id="custom-styled-ngx-nav-button" (click)="setDocTitle('My Events')" id="MyEvents">
-    <mat-icon ngxBottomNavIcon class="material-icons-outlined">local_activity</mat-icon>
+    <mat-icon [matBadge]="count" matBadgeColor="accent" [matBadgeHidden]="hidden" ngxBottomNavIcon class="material-icons-outlined">local_activity</mat-icon>
   </button>
 
   <button ngx-bottom-nav label="Profile" routerLink="/profile" id="custom-styled-ngx-nav-button" style="color: white" (click)="setDocTitle('Profile')" id="Profile">

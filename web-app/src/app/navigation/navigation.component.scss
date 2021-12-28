@@ -5,26 +5,34 @@ mat-toolbar {
     position: fixed;
     top: 0;
     z-index: 100;
+    .nav-spacer {
+        flex: 1 1 auto;
+      }
 }
 #titlebar-placeholder {
     display: block;
     height: 56px;
     width: 100%;
 }
+
 ngx-bottom-nav {
     position: fixed;
     bottom: 0;
     z-index: 100;
-}
-ngx-bottom-nav {
-    padding: 8px 0px;
-    background: #9c27b0;
+    background: #ff0000;
+
+    ::ng-deep mat-toolbar {
+        height: 80px !important;
+    }
     mat-icon {
         padding: 2px 16px;
         margin-bottom: 4px;
     }
     mat-icon.active-mat-icon {
-        background-color: #a553b4;
+        background-color: #ff9a83;
         border-radius: 50px;
     }
+}
+.subpage {
+    display: none;
 }

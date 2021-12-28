@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+// import { from, Observable } from 'rxjs';
+
 
 @Component({
   selector: 'app-navigation',
@@ -8,14 +10,26 @@ import { Title } from '@angular/platform-browser';
 })
 export class NavigationComponent implements OnInit {
   current_title = this.titleService.getTitle();
+  back = this.current_title;
   constructor(private titleService: Title) {
   }
+
+  hidden = true;
+  subpage = false;
+  count = 0;
+
   setDocTitle(title: string) {
-    //document.getElementById('current-title')?.innerHTML 
+    document.getElementById('subpage')?.classList.add('subpage');
     this.current_title = title;
     this.titleService.setTitle(title);
+    this.subpage = false;
+    this.back = this.current_title;
 
-    // 
+    if (title == "MyEvents") {
+      this.count = 0;
+      this.hidden = true;
+    }
+    
 
     document.getElementById('Explore')?.children[0].children[0].classList.remove('active-mat-icon');
     document.getElementById('Explore')?.children[0].children[0].classList.add('material-icons-outlined');
@@ -33,7 +47,9 @@ export class NavigationComponent implements OnInit {
     document.getElementById(title.replace(/\s/g, ""))?.children[0].children[0].classList.add('active-mat-icon');
  }
 
-
+  hideBackButton() {
+    document.getElementById('subpage')?.classList.add('subpage');
+  }
 
   ngOnInit(): void {
     this.current_title = 'Explore';

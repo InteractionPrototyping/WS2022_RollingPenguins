@@ -1,0 +1,27 @@
+
+[
+    {
+        "id": 1,
+        "name": "Wine Tasting",
+        "saved": false,
+        "description": "Stroll through the city with our sommelier, a glass of wine in hand, have a bite to eat at various culinary hot spots and experience real street pairing! These are our gourmet tours throughout Munich! In doing so, we show what Munich freedom means: Pleasurable enjoyment on the go, simple yet brilliant tastes from all over the world!",
+        "date": "January 15, 2022 17:24:00",
+        "picture": "../assets/events/hero-images/winetasting.jpeg",
+        "position": {
+            "lat": 9.96233,
+            "long": 49.80404
+        }
+    },
+    {
+        "id": 2,
+        "name": "Oktoberfest",
+        "saved": false,
+        "description": "Stroll through the city with our sommelier, a glass of wine in hand, have a bite to eat at various culinary hot spots and experience real street pairing! These are our gourmet tours throughout Munich! In doing so, we show what Munich freedom means: Pleasurable enjoyment on the go, simple yet brilliant tastes from all over the world!",
+        "date": "January 15, 2022 17:24:00",
+        "picture": "../assets/events/hero-images/winetasting.jpeg",
+        "position": {
+            "lat": 9.96233,
+            "long": 49.80404
+        }
+    }
+]

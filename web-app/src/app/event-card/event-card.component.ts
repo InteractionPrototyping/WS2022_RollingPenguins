@@ -1,5 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 
+import EventsJson from '../../assets/events/events.json';
+
+
+interface EVENT {
+  id: number;
+  name: string;
+  saved: boolean;
+  description: string;
+  date: string;
+  picture: string;
+  position: {
+    lat: number;
+    long: number;
+  }
+}
+
 
 @Component({
   selector: 'app-event-card',
@@ -7,15 +23,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./event-card.component.scss']
 })
 export class EventCardComponent implements OnInit {
+  //Employees: EMPLOYEE[] = EmployeesJson;
+  EventList: EVENT[] = EventsJson;
 
-  constructor() { }
+  //JSON.parse(EventsJson);
+  constructor() { 
+    
+  }
 
   ngOnInit(): void {
   }
-  save() {
 
-  }
   share() {
     
+  }
+
+  addToEventList() {
+
   }
 }
