@@ -25,3 +25,14 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+# rolling_penguins
+
+Git repository for our documentation and code for the Event/Tourism app in the study course "Interaction Programming"
+
+# Git Upload
+## Step 1: Build / deploy
+ng build --base-href "https://interactionprototyping.github.io/WS2022_RollingPenguins/" 
+## Step 2: Publish on Git
+npx angular-cli-ghpages — dir=dist/web-app
