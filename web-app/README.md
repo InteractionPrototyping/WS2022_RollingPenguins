@@ -36,3 +36,7 @@ Git repository for our documentation and code for the Event/Tourism app in the s
 ng build --base-href "https://interactionprototyping.github.io/WS2022_RollingPenguins/" 
 ## Step 2: Publish on Git
 npx angular-cli-ghpages — dir=dist/web-app
+
+
+# Temp
+../assets/events/hero-images/winetasting.jpeg
