@@ -5,14 +5,21 @@
         [zoom]="zoom"
         [center]="center"
         [options]="options"
+        mapId="ee691f8617d29770"
         >
         <map-marker
-            *ngFor="let marker of markers"
-            [position]="marker.position"
-            [label]="marker.label"
-            [title]="marker.title"
-            [options]="marker.options"
+            *ngFor="let event of EventList"
+            [position]="event.position"
+            label="E"
+            [title]="event.name"
         >
         </map-marker>
     </google-map>
 </main>
+<mat-card class="map-card">
+    <mat-card-title-group>
+      <mat-card-title>{{eventtitle}}</mat-card-title>
+      <mat-card-subtitle>{{eventtime}}</mat-card-subtitle>
+      <img mat-card-sm-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" >
+    </mat-card-title-group>
+  </mat-card>

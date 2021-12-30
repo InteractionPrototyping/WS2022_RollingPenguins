@@ -36,7 +36,6 @@ import * as moment from 'moment';
 import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
 import { MatBadgeModule } from '@angular/material/badge';
 import { EventDetailPageComponent } from './event-detail-page/event-detail-page.component';
-import { EventMapCardComponent } from './event-map-card/event-map-card.component';
 
 
 
@@ -53,8 +52,7 @@ import { EventMapCardComponent } from './event-map-card/event-map-card.component
     EventCardComponent,
     LoginComponent,
     RegisterComponent,
-    EventDetailPageComponent,
-    EventMapCardComponent
+    EventDetailPageComponent
   ],
   imports: [
     BrowserModule,

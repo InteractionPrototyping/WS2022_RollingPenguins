@@ -12,7 +12,7 @@ interface EVENT {
   picture: string;
   position: {
     lat: number;
-    long: number;
+    lng: number;
   }
 }
 

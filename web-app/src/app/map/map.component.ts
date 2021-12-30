@@ -1,5 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { Input } from '@angular/core';
+import EventsJson from '../../assets/events/events.json';
+
+
+interface EVENT {
+  id: number;
+  name: string;
+  saved: boolean;
+  description: string;
+  date: string;
+  picture: string;
+  position: {
+    lat: number;
+    lng: number;
+  }
+}
 
 @Component({
   selector: 'app-map',
@@ -9,8 +24,14 @@ import { Input } from '@angular/core';
 
 
 export class MapComponent implements OnInit {
+
+  eventtitle = "Nothing Selected";
+  eventtime = "Nothing Selected";
+
+
+  EventList: EVENT[] = EventsJson;
   // @Input()
-  zoom = 30;
+  zoom = 20;
   center!: google.maps.LatLngLiteral;
   markers = [] as any;
 
@@ -20,7 +41,10 @@ export class MapComponent implements OnInit {
     disableDoubleClickZoom: false,
     maxZoom: 50,
     minZoom: 4,
-  }
+    mapId: "ee691f8617d29770",
+    disableDefaultUI: true,
+  } as google.maps.MapOptions;
+
   constructor() { 
   }
 
@@ -36,6 +60,7 @@ export class MapComponent implements OnInit {
   ngAfterViewChecked(): void {
     //this.addMarker();
   }
+  /*
   @Input() addMarker() {
     
     this.markers.push({
@@ -48,7 +73,7 @@ export class MapComponent implements OnInit {
         text: 'Marker label ' + (this.markers.length + 1),
       },
       title: 'Marker title ' + (this.markers.length + 1),
-      options: { animation: google.maps.Animation.BOUNCE },
+      //options: { animation: google.maps.Animation.DROP }, [options]="marker.options"
     })
-  }
+  }*/
 }
