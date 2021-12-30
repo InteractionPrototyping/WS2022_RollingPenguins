@@ -7,8 +7,8 @@
     "date": "January 15, 2022 17:24:00",
     "picture": "./assets/events/hero-images/winetasting.jpeg",
     "position": {
-      "lat": 9.96233,
-      "lng": 49.80404
+      "lng": 9.96233,
+      "lat": 49.80404
     }
   },
   {
@@ -19,8 +19,8 @@
     "date": "October 1, 2022 09:24:00",
     "picture": "./assets/events/hero-images/oktoberfest.jpg",
     "position": {
-      "lat": 11.55103903678419,
-      "lng": 48.13116311811496
+      "lng": 11.55103903678419,
+      "lat": 48.13116311811496
     }
   },
 {
@@ -31,8 +31,8 @@
     "date": "September 23, 2022 17:24:00",
     "picture": "./assets/events/hero-images/starkbierfest.jpg",
     "position": {
-      "lat": 11.579330785503746,
-      "lng": 48.12292275688595
+      "lng": 11.579330785503746,
+      "lat": 48.12292275688595
     }
   },
  {
@@ -43,8 +43,8 @@
     "date": "August 2, 2022 19:24:00",
     "picture": "./assets/events/hero-images/croenlein.jpg",
     "position": {
-      "lat": 11.58152529272718,
-      "lng": 48.12159323964902
+      "lng": 11.58152529272718,
+      "lat": 48.12159323964902
     }
   },
 {
@@ -55,8 +55,8 @@
     "date": "September 12, 2022 15:24:00",
     "picture": "./assets/events/hero-images/olympiapark.jpg",
     "position": {
-      "lat": 11.55032232981489,
-      "lng": 48.174192270066236
+      "lng": 11.55032232981489,
+      "lat": 48.174192270066236
     }
   },
 {
@@ -67,8 +67,8 @@
     "date": "September 12, 2022 15:24:00",
     "picture": "./assets/events/hero-images/kosmos.jpg",
     "position": {
-      "lat": 11.55994912205832,
-      "lng": 48.14265536173896
+      "lng": 11.55994912205832,
+      "lat": 48.14265536173896
     }
   },
 {
@@ -79,8 +79,8 @@
     "date": "February 12, 2022 20:24:00",
     "picture": "./assets/events/hero-images/johannis.jpg",
     "position": {
-      "lat": 11.597175485254603,
-      "lng": 48.13373574706198
+      "lng": 11.597175485254603,
+      "lat": 48.13373574706198
     }
   },
 {
@@ -91,8 +91,8 @@
     "date": "March 22, 2022 21:24:00",
     "picture": "./assets/events/hero-images/bummsvoll.jpg",
     "position": {
-      "lat": 11.583981276298204,
-      "lng": 48.11705404830531
+      "lng": 11.583981276298204,
+      "lat": 48.11705404830531
     }
   },
 {
@@ -103,8 +103,8 @@
     "date": "March 2, 2022 21:24:00",
     "picture": "./assets/events/hero-images/gorilla.jpg",
     "position": {
-      "lat": 11.532277042818112,
-      "lng": 48.14988635018392
+      "lng": 11.532277042818112,
+      "lat": 48.14988635018392
     }
   },
 {
@@ -115,8 +115,8 @@
     "date": "May 13, 2022 21:24:00",
     "picture": "./assets/events/hero-images/sehnsucht.jpg",
     "position": {
-      "lat": 11.57640956943553,
-      "lng": 48.149708618722435
+      "lng": 11.57640956943553,
+      "lat": 48.149708618722435
     }
   }
 ]
