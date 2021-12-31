@@ -12,14 +12,17 @@
             [position]="event.position"
             label="E"
             [title]="event.name"
+            (mapClick)="showMapCard(event)"
         >
         </map-marker>
     </google-map>
 </main>
-<mat-card class="map-card">
-    <mat-card-title-group>
-      <mat-card-title>{{eventtitle}}</mat-card-title>
-      <mat-card-subtitle>{{eventtime}}</mat-card-subtitle>
-      <img mat-card-sm-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" >
-    </mat-card-title-group>
-  </mat-card>
+<div id="draggable-card">
+    <div class="draggable-thumb-wrapper" 
+    (touchstart)="startDraggingHandler($event)"
+    (touchmove)="draggingHandler($event)"
+    (touchend)="stopDraggingHandler($event)">
+        <div class="draggable-thumb"></div>
+    </div>
+    <app-event-card id="selected_event" [event]="selected_event"></app-event-card>
+</div>

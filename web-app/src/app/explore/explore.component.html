@@ -22,11 +22,9 @@
   <!--input [ngxTimepicker]="picker">
   <ngx-material-timepicker #picker></ngx-material-timepicker-->
 
-
+  <div class="event-card" *ngFor="let event of EventList"> 
+    <app-event-card [event]="event"></app-event-card>
+  </div>
     
-  <app-event-card></app-event-card>
-  <app-event-card></app-event-card>
-  <app-event-card></app-event-card>
-  <app-event-card></app-event-card>
-  <app-event-card></app-event-card>
+    
 </main>

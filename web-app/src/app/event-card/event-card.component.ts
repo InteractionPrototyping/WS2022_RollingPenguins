@@ -1,7 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-
-import EventsJson from '../../assets/events/events.json';
-
+import { Component, Input, OnInit } from '@angular/core';
 
 interface EVENT {
   id: number;
@@ -17,28 +14,25 @@ interface EVENT {
 }
 
 
+
+
+
 @Component({
   selector: 'app-event-card',
   templateUrl: './event-card.component.html',
   styleUrls: ['./event-card.component.scss']
 })
 export class EventCardComponent implements OnInit {
-  //Employees: EMPLOYEE[] = EmployeesJson;
-  EventList: EVENT[] = EventsJson;
+  @Input()
+  event!: EVENT;
 
-  //JSON.parse(EventsJson);
-  constructor() { 
-    
-  }
 
   ngOnInit(): void {
   }
 
   share() {
-    
   }
 
   addToEventList() {
-
   }
 }

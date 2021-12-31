@@ -24,16 +24,20 @@ interface EVENT {
 
 
 export class MapComponent implements OnInit {
-
-  eventtitle = "Nothing Selected";
-  eventtime = "Nothing Selected";
-
-
   EventList: EVENT[] = EventsJson;
+  selected_event = this.EventList[0];
   // @Input()
   zoom = 20;
   center!: google.maps.LatLngLiteral;
   markers = [] as any;
+  
+
+  // Drag function
+  event: any;
+  yDragValue = 0;
+  isDragging = false;
+  initialDragClientY = 0;
+  scroll_value = 0;
 
   options: google.maps.MapOptions = {
     zoomControl: false,
@@ -60,6 +64,29 @@ export class MapComponent implements OnInit {
   ngAfterViewChecked(): void {
     //this.addMarker();
   }
+
+  showMapCard(event: EVENT): void {
+    this.selected_event = event;
+  }
+
+  startDraggingHandler(event: any) {
+    console.log(event);
+    this.isDragging = true;
+    const { clientY } = event.touches[0];
+    this.initialDragClientY = clientY;
+  }
+  draggingHandler(event: any) {
+    if(!this.isDragging) return;
+    const { clientY } = event.touches[0];
+    this.yDragValue = clientY - this.initialDragClientY;
+    document.getElementById("draggable-card")!.style.transform = `translateY(${this.yDragValue}px)`;
+  }
+  stopDraggingHandler(event: any) {
+    if(!this.isDragging) return;
+    const { clientY } = event.changedTouches[0];
+    this.isDragging = false;
+  }
+  
   /*
   @Input() addMarker() {
     
@@ -74,6 +101,6 @@ export class MapComponent implements OnInit {
       },
       title: 'Marker title ' + (this.markers.length + 1),
       //options: { animation: google.maps.Animation.DROP }, [options]="marker.options"
-    })
+    }) [ngStyle]="{'transform': 'translateY(' + $scroll_value + 'px)'}
   }*/
 }

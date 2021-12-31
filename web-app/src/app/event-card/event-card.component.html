@@ -1,4 +1,4 @@
-<mat-card id="EventCard" *ngFor="let event of EventList">
+<mat-card id="EventCard">
     <mat-card-title>{{event.name}}</mat-card-title>
     <img mat-card-image [src]="event.picture">
     <mat-card-subtitle>{{event.date}}</mat-card-subtitle>
@@ -8,5 +8,3 @@
             <button mat-raised-button color="primary" [routerLink]="['/event-detail-page', event.id]">MORE</button>
         </mat-card-actions>
 </mat-card>
-
-
