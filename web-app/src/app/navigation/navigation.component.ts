@@ -18,16 +18,16 @@ export class NavigationComponent implements OnInit {
   subpage = false;
   count = 0;
 
-  setDocTitle(title: string) {
+  setDocTitle(title: string, route: string) {
     document.getElementById('subpage')?.classList.add('subpage');
     this.current_title = title;
     this.titleService.setTitle(title);
     this.subpage = false;
-    this.back = this.current_title;
+    this.back = route;
 
     if (title == "MyEvents") {
-      this.count = 0;
-      this.hidden = true;
+      this.count = 10;
+      this.hidden = false;
     }
     
 

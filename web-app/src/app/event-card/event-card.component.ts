@@ -33,6 +33,6 @@ export class EventCardComponent implements OnInit {
   share() {
   }
 
-  addToEventList() {
+  toggleFavorite() {
   }
 }

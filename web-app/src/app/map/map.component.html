@@ -6,6 +6,7 @@
         [center]="center"
         [options]="options"
         mapId="ee691f8617d29770"
+        (mapClick)="hideMapCard()"
         >
         <map-marker
             *ngFor="let event of EventList"
@@ -13,6 +14,12 @@
             label="E"
             [title]="event.name"
             (mapClick)="showMapCard(event)"
+        >
+        </map-marker>
+        <map-marker
+            *ngFor="let position of markers"
+            [position]="position.position"
+            [icon]="position.icon"
         >
         </map-marker>
     </google-map>

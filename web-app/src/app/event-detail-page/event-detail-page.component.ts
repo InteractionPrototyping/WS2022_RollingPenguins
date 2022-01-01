@@ -25,6 +25,7 @@ export class EventDetailPageComponent implements OnInit {
   id = 0;
   EventList: EVENT[] = EventsJson;
   event = this.EventList[0];
+  toggle = "SAVE";
 
   constructor(private route: ActivatedRoute,) { 
     this.id = this.route.snapshot.params.id;
@@ -39,6 +40,14 @@ export class EventDetailPageComponent implements OnInit {
         this.event = element;
       }
     });
+  }
+  toggleFavorite(event: EVENT) {
+    event.saved = !event.saved;
+    if (event.saved) {
+      this.toggle = "REMOVE";
+    } else {
+      this.toggle = "SAVE"
+    }
   }
 
 }
