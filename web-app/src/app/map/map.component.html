@@ -16,10 +16,9 @@
             (mapClick)="showMapCard(event)"
         >
         </map-marker>
-        <map-marker
-            *ngFor="let position of markers"
-            [position]="position.position"
-            [icon]="position.icon"
+        <map-marker width="120" height="120" style="z-index: 4000;"
+            [position]="locationMarker.position"
+            [icon]="locationMarker.icon"
         >
         </map-marker>
     </google-map>
@@ -28,8 +27,12 @@
     <div class="draggable-thumb-wrapper" 
     (touchstart)="startDraggingHandler($event)"
     (touchmove)="draggingHandler($event)"
-    (touchend)="stopDraggingHandler($event)">
-        <div class="draggable-thumb"></div>
+    (touchend)="stopDraggingHandler($event)"
+    (click)="toggleView()">
+        <div id="arrow" class="draggable-thumb">
+            <span class="left-bar"></span>
+            <span class="right-bar"></span>
+        </div>
     </div>
     <app-event-card id="selected_event" [event]="selected_event"></app-event-card>
 </div>

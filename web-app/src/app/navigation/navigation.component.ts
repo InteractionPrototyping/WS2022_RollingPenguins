@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, DoCheck} from '@angular/core';
 import { Title } from '@angular/platform-browser';
-// import { from, Observable } from 'rxjs';
+import{ GlobalConstants } from '../common/global-constants';
 
 
 @Component({
@@ -11,25 +11,24 @@ import { Title } from '@angular/platform-browser';
 export class NavigationComponent implements OnInit {
   current_title = this.titleService.getTitle();
   back = this.current_title;
+  subpage = false;
+
+  visibilitySavedEventsCounter = GlobalConstants.visibilitySavedEventsCounter;
+  savedEventsCounter = GlobalConstants.savedEventsCounter;
+
+
   constructor(private titleService: Title) {
   }
 
-  hidden = true;
-  subpage = false;
-  count = 0;
+  
+  
 
   setDocTitle(title: string, route: string) {
     document.getElementById('subpage')?.classList.add('subpage');
     this.current_title = title;
     this.titleService.setTitle(title);
     this.subpage = false;
-    this.back = route;
-
-    if (title == "MyEvents") {
-      this.count = 10;
-      this.hidden = false;
-    }
-    
+    this.back = route;    
 
     document.getElementById('Explore')?.children[0].children[0].classList.remove('active-mat-icon');
     document.getElementById('Explore')?.children[0].children[0].classList.add('material-icons-outlined');
@@ -57,5 +56,11 @@ export class NavigationComponent implements OnInit {
     document.getElementById('Explore')?.children[0].children[0].classList.add('active-mat-icon');
     document.getElementById('Explore')?.children[0].children[0].classList.remove('material-icons-outlined');
   }
+
+  ngDoCheck(): void {
+    this.visibilitySavedEventsCounter = GlobalConstants.visibilitySavedEventsCounter;
+    this.savedEventsCounter = GlobalConstants.savedEventsCounter;
+  }
+  
   
 }

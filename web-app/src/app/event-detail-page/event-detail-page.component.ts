@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import EventsJson from '../../assets/events/events.json';
+import{ GlobalConstants } from '../common/global-constants';
+
 
 
 interface EVENT {
@@ -25,11 +27,10 @@ export class EventDetailPageComponent implements OnInit {
   id = 0;
   EventList: EVENT[] = EventsJson;
   event = this.EventList[0];
-  toggle = "SAVE";
+  toggle!: string;
 
   constructor(private route: ActivatedRoute,) { 
     this.id = this.route.snapshot.params.id;
-    console.log(this.id);
   }
 
   ngOnInit(): void {
@@ -38,15 +39,29 @@ export class EventDetailPageComponent implements OnInit {
     this.EventList.forEach(element => {
       if (this.id == element.id) {
         this.event = element;
+      
+        if (this.event.saved) {
+          this.toggle = "REMOVE";
+        } else {
+          this.toggle = "SAVE";
+        }
       }
     });
+
+    
   }
   toggleFavorite(event: EVENT) {
     event.saved = !event.saved;
     if (event.saved) {
       this.toggle = "REMOVE";
+      GlobalConstants.savedEventsCounter++;
+      GlobalConstants.visibilitySavedEventsCounter = false;
     } else {
-      this.toggle = "SAVE"
+      this.toggle = "SAVE";
+      GlobalConstants.savedEventsCounter--;
+      if  (GlobalConstants.savedEventsCounter == 0) {
+        GlobalConstants.visibilitySavedEventsCounter = true;
+      }
     }
   }
 

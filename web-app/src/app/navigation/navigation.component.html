@@ -25,7 +25,7 @@
   </button>
   
   <button ngx-bottom-nav label="My Events" routerLink="/events" id="custom-styled-ngx-nav-button" (click)="setDocTitle('My Events', 'events')" id="MyEvents">
-    <mat-icon [matBadge]="count" matBadgeColor="accent" [matBadgeHidden]="hidden" ngxBottomNavIcon class="material-icons-outlined">local_activity</mat-icon>
+    <mat-icon [matBadge]="savedEventsCounter" matBadgeColor="accent" [matBadgeHidden]="visibilitySavedEventsCounter" ngxBottomNavIcon class="material-icons-outlined">local_activity</mat-icon>
   </button>
 
   <button ngx-bottom-nav label="Profile" routerLink="/profile" id="custom-styled-ngx-nav-button" style="color: white" (click)="setDocTitle('Profile', 'profile')" id="Profile">
