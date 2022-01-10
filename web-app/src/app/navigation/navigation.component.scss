@@ -7,7 +7,19 @@ mat-toolbar {
     z-index: 100;
     .nav-spacer {
         flex: 1 1 auto;
-      }
+    }
+    button {
+        z-index: 100;
+    }
+    #current-title {
+        position: fixed;
+        width: 100vw;
+        left: 0;
+        text-align: center;
+        z-index: 1;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
 }
 #titlebar-placeholder {
     display: block;
@@ -15,22 +27,28 @@ mat-toolbar {
     width: 100%;
 }
 
+
+
 ngx-bottom-nav {
     position: fixed;
-    bottom: 0;
+    bottom: 0px;
     z-index: 100;
-    background: #ff0000;
-
-    ::ng-deep mat-toolbar {
-        height: 80px !important;
-    }
+    
     mat-icon {
         padding: 2px 16px;
         margin-bottom: 4px;
     }
     mat-icon.active-mat-icon {
-        background-color: #ff9a83;
+        background-color: red;
         border-radius: 50px;
+    }
+    ::ng-deep mat-toolbar {
+        height: 80px !important;
+        padding-bottom: 16px;
+        background: #212121; // if red is a signal color
+        * {
+            color: white;
+        }
     }
 }
 .subpage {

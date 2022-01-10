@@ -71,11 +71,13 @@ export class MapComponent implements OnInit {
         lng: position.coords.longitude,
       }
     });*/
+    window.scrollTo(0,1);
   }
 
   ngAfterViewChecked(): void {
     this.draggable_card = document.getElementById("draggable-card");
     this.arrow = document.getElementById("arrow");
+    window.scrollTo(0,1);
     // this.addMarker();
   }
   /*

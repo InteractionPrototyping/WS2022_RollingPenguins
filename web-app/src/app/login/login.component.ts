@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
-
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-login',
@@ -12,13 +12,19 @@ export class LoginComponent implements OnInit {
   requiresLogin: boolean = true ; // shown by default
   requiresRegister: boolean = false ; // shown by default
 
-  constructor() {  }
+  constructor(private titleService: Title) {
+  }
 
   ngOnInit(): void {
+    this.titleService.setTitle("EventFinder");
+  }
+  ngAfterViewInit(): void {
+    this.titleService.setTitle("EventFinder");
   }
   hide() {
     this.requiresLogin = false;
     document.getElementById('router-outlet')?.classList.remove('hidden');
+    this.titleService.setTitle("Explore");
   }
   register() {
     this.requiresRegister = true;
