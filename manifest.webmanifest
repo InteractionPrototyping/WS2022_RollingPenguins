@@ -3,7 +3,7 @@
   "short_name": "EventFinder",
   "theme_color": "#ff0000",
   "background_color": "#1c1c1c",
-  "display": "standalone",
+  "display": "fullscreen",
   "scope": "./",
   "start_url": "./",
   "icons": [
