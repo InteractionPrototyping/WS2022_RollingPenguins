@@ -65,4 +65,16 @@ export class EventDetailPageComponent implements OnInit {
     }
   }
 
+  highlight(id: number) {
+    var element = document.getElementById(id.toString());
+    if(element!.classList.contains("opacityClicked")) {
+      element!.classList.remove("opacityClicked");
+      element!.classList.add("opacityDefault");
+    } else {
+      element!.classList.remove("opacityDefault");
+      element!.classList.add("opacityClicked");
+    }
+  }
+
 }
+

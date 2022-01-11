@@ -7,6 +7,12 @@
 
     <mat-card-actions>
         <button mat-button>SHARE</button>
-        <button mat-raised-button color="primary" (click)="toggleFavorite(event)">{{toggle}}</button>
+        <button class="b-save" mat-raised-button  (click)="toggleFavorite(event)">
+            {{toggle}}
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </mat-card-actions>
 </main>

@@ -32,8 +32,8 @@ import { FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
-import * as moment from 'moment';
-import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
+// import * as moment from 'moment';
+// import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
 import { MatBadgeModule } from '@angular/material/badge';
 import { EventDetailPageComponent } from './event-detail-page/event-detail-page.component';
 
@@ -71,7 +71,7 @@ import { EventDetailPageComponent } from './event-detail-page/event-detail-page.
     MatSelectModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    NgxMaterialTimepickerModule,
+    // NgxMaterialTimepickerModule,
     MatBadgeModule
   ],
   providers: [
