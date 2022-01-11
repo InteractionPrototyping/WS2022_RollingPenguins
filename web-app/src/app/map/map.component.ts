@@ -139,11 +139,11 @@ export class MapComponent implements OnInit {
     //this.draggable_card!.style.transform = `translateY(${this.yDragValue}px)`
   }
   setMaxHeight(): number {
-    if (window.innerHeight - 64 - 80 - 24 < this.draggable_card!.clientHeight) {
+    if (window.innerHeight - 64 - 80 - 16 - 24 < this.draggable_card!.clientHeight) {
       return (-0.8*window.innerHeight + 72);
     } else {
       
-      return (0.2*window.innerHeight - 88 - this.draggable_card!.clientHeight);
+      return (0.2*window.innerHeight - 88 - 16 - this.draggable_card!.clientHeight);
     }
   }
 }

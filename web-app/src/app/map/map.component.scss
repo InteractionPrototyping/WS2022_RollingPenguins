@@ -1,6 +1,6 @@
 main {
     position: fixed;
-    height: calc(100% - 80px - 56px);
+    height: calc(100% - 80px - 16px - 56px);
     width: 100%;
 }
 
@@ -23,7 +23,6 @@ main {
     padding: 16px 0px;
     cursor: pointer;
     border-bottom: 1px solid #808080;
-    background-color: #1c1c1c;
 }
   
 .draggable-thumb {
@@ -35,7 +34,7 @@ main {
 }
 
 #selected_event ::ng-deep mat-card {
-    max-height: calc(100vh - 80px - 56px - 16px - 24px - 8px - 48px);
+    max-height: calc(100vh - 80px - 16px - 56px - 16px - 24px - 8px - 48px);
     overflow-y: scroll;
     overflow-x: hidden;
 }

@@ -33,6 +33,8 @@ ngx-bottom-nav {
     position: fixed;
     bottom: 0px;
     z-index: 100;
+    padding-bottom: 16px;
+    background-color: #212121;
     
     mat-icon {
         padding: 2px 16px;
@@ -44,7 +46,6 @@ ngx-bottom-nav {
     }
     ::ng-deep mat-toolbar {
         height: 80px !important;
-        padding-bottom: 16px;
         background: #212121; // if red is a signal color
         * {
             color: white;
