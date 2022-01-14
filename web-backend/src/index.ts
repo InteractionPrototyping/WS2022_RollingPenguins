@@ -3,7 +3,7 @@ import cors from 'cors';
 import { connectToDatabase } from './database/database-connection';
 import { userRoute } from './routes/user.route';
 //jsonwebtoken
-const allowedOrigins = ['http://localhost:4210', 'https://interactionprototyping.github.io'];
+const allowedOrigins = ['http://localhost:4210', 'http://localhost:4200', 'https://interactionprototyping.github.io'];
 
 const corsOptions: cors.CorsOptions = {
   origin: allowedOrigins

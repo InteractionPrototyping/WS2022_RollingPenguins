@@ -46,7 +46,7 @@ const usersSchema = new Schema(
     },
     suggestedEvents: [{
         suggester: {
-            type: Schema.Types.String,
+            type: Schema.Types.ObjectId,
             required: false
         },
         eventId: {

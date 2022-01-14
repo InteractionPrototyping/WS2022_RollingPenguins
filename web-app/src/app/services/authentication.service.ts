@@ -45,14 +45,35 @@ export class AuthenticationService {
     // this.currentUserSubject.next(null);
   }
 
+  public getUserById(userId: string) {
+    return this.http.post<any>('http://localhost:4500/users/getUserById', { userId })
+    .pipe(map(user => {
+      return user;
+    }));
+  }
+
+  public getAllUsers() {
+    return this.http.get<any>('http://localhost:4500/users/getAllUsers')
+    .pipe(map(user => {
+      return user;
+    }));
+  }
+
+  public recommendEvent(eventId: number, forUserId: string) {
+    const recommenderId = this.currentUserValue.user._id;
+    return this.http.post<any>('http://localhost:4500/users/recommendEvent', {
+      eventId,
+      recommenderId,
+      forUserId
+    }).pipe(map(result => {
+      return result
+    }));
+  }
+
   public saveEvent(eventId: number) {
-    
     const userId = this.currentUserValue.user._id;
-    
-    
-    return this.http.post<any>('http://localhost:4500/users/saveEvent', { userId: '61e14a1cc0a0cc26f96edf5c', eventId: 2 })
+    return this.http.post<any>('http://localhost:4500/users/saveEvent', { userId, eventId })
       .pipe(map(user => {
-        console.log(user);
         // login successful if there's a jwt token in the response
 
         return user;
