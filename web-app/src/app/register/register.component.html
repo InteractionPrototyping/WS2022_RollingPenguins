@@ -1,1 +1,32 @@
-<p>register works!</p>
+<!--main id="register" class="mat-app-background">
+    <span id="app-icon" class="material-icons-outlined">
+        celebration
+    </span>
+    <span id="app-title">Event Finder</span>
+
+    <div id="login-cred">
+        <mat-form-field appearance="fill">
+            <mat-label>Enter your username</mat-label>
+            <input matInput placeholder="pat@example.com" [formControl]="email" required>
+            <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Enter your email</mat-label>
+            <input matInput placeholder="pat@example.com" [formControl]="email" required>
+            <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Enter your password</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'">
+            <button mat-icon-button matSuffix (click)="hidePswd = !hidePswd" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hidePswd">
+                <mat-icon>{{hidePswd ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+        </mat-form-field>
+    </div>
+    <div id="login-buttons">
+        <--button mat-button label="Register" (click)="register()">Register</button>
+        <button mat-raised-button color="primary" label="Login" routerLink="/explore" (click)="hide()">Login</button>
+    </div>
+</main-->

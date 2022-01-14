@@ -3,6 +3,7 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import EventsJson from '../../assets/events/events.json';
 import{ GlobalConstants } from '../common/global-constants';
 import { IEvent } from '../common/IEvent';
+import { AuthenticationService } from '../services/authentication.service';
 
 
 @Component({
@@ -16,7 +17,7 @@ export class EventDetailPageComponent implements OnInit {
   event = this.EventList[0];
   toggle!: string;
 
-  constructor(private route: ActivatedRoute,) { 
+  constructor(private route: ActivatedRoute, private authenticationService: AuthenticationService) { 
     this.id = this.route.snapshot.params.id;
   }
 
@@ -38,6 +39,7 @@ export class EventDetailPageComponent implements OnInit {
     
   }
   toggleFavorite(event: IEvent) {
+    this.authenticationService.saveEvent(event.id);
     event.saved = !event.saved;
     if (event.saved) {
       this.toggle = "REMOVE";

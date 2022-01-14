@@ -5,13 +5,16 @@ import { EventsComponent } from './events/events.component';
 import { ExploreComponent } from './explore/explore.component';
 import { MapComponent } from './map/map.component';
 import { PersonalComponent } from './personal/personal.component';
+import { LoginComponent } from './login/login.component';
+import { AuthGuard } from './common/auth.guard';
 
 const routes: Routes = [
-  { path: 'explore', component: ExploreComponent },
-  { path: 'map', component: MapComponent },
-  { path: 'events', component: EventsComponent },
-  { path: 'profile', component: PersonalComponent },
-  { path: 'event-detail-page/:id', component: EventDetailPageComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'explore', component: ExploreComponent, canActivate:[AuthGuard] },
+  { path: 'map', component: MapComponent, canActivate:[AuthGuard]  },
+  { path: 'events', component: EventsComponent, canActivate:[AuthGuard]  },
+  { path: 'profile', component: PersonalComponent, canActivate:[AuthGuard]  },
+  { path: 'event-detail-page/:id', component: EventDetailPageComponent, canActivate:[AuthGuard]  },
   { path: '**', redirectTo: 'explore' },
 ];
 

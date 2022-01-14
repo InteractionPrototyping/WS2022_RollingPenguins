@@ -38,6 +38,9 @@ import { EventDetailPageComponent } from './event-detail-page/event-detail-page.
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 
+import { HttpClient, HttpClientModule, HttpHeaders, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { JwtInterceptor } from './common/jwt.interceptor';
+
 
 
 @NgModule({
@@ -78,10 +81,12 @@ import { environment } from '../environments/environment';
       // Register the ServiceWorker as soon as the app is stable
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000'
-    })
+    }),
+    HttpClientModule
   ],
   providers: [
-    Title
+    Title,
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
 })
