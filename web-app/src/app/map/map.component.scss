@@ -4,10 +4,10 @@ main {
     width: 100%;
 }
 
-#draggable-card{
+#draggable-card {
     position: fixed;
     top: 80%;
-    transform: translateY(20%);
+    transform: translateY(30%);
     width: calc(100vw - 16px);
     left: 8px;
     background: rgb(66, 66, 66);
@@ -96,4 +96,9 @@ main {
     transform-origin: center center;
     transform: rotate(40deg);
   }
+}
+
+#event-marker {
+  position: relative;
+  top: 0;
 }

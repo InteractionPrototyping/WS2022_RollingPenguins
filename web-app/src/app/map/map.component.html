@@ -2,18 +2,17 @@
     <google-map 
         height="100%" 
         width="100%"
-        [zoom]="zoom"
         [center]="center"
         [options]="options"
         mapId="ee691f8617d29770"
         (mapClick)="hideMapCard()"
         >
-        <map-marker
-            *ngFor="let event of EventList"
-            [position]="event.position"
-            label="E"
-            [title]="event.name"
-            (mapClick)="showMapCard(event)"
+        <map-marker id="event-marker"
+            *ngFor="let marker of EventMarker"
+            [position]="marker.position"
+            [icon]="marker.icon"
+            [title]="marker.assignedEvent.name"
+            (mapClick)="showMapCard(marker.assignedEvent)"
         >
         </map-marker>
         <map-marker width="120" height="120" style="z-index: 4000;"
@@ -23,6 +22,8 @@
         </map-marker>
     </google-map>
 </main>
+
+
 <div id="draggable-card">
     <div class="draggable-thumb-wrapper" 
     (touchstart)="startDraggingHandler($event)"

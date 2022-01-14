@@ -2,3 +2,8 @@ mat-card-actions {
     display: flex;
     justify-content: flex-end;
 }
+img {
+    max-height: 40vh;
+    background-color: #252525;
+    object-fit: cover;
+}

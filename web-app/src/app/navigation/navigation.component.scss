@@ -41,7 +41,7 @@ ngx-bottom-nav {
         margin-bottom: 4px;
     }
     mat-icon.active-mat-icon {
-        background-color: red;
+        background-color: var(--base-color);
         border-radius: 50px;
     }
     ::ng-deep mat-toolbar {

@@ -1,18 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import EventsJson from '../../assets/events/events.json';
-
-interface EVENT {
-  id: number;
-  name: string;
-  saved: boolean;
-  description: string;
-  date: string;
-  picture: string;
-  position: {
-    lat: number;
-    lng: number;
-  }
-}
+import { IEvent } from '../common/IEvent';
 
 @Component({
   selector: 'app-events',
@@ -20,8 +8,8 @@ interface EVENT {
   styleUrls: ['./events.component.scss']
 })
 export class EventsComponent implements OnInit {
-  EventList: EVENT[] = EventsJson;
-  FavList: EVENT[] = EventsJson;
+  EventList: IEvent[] = EventsJson;
+  FavList: IEvent[] = EventsJson;
   constructor() { }
 
   ngOnInit(): void {

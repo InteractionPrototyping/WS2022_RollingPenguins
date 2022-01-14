@@ -51,8 +51,7 @@ export class NavigationComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.current_title = 'Explore';
-    this.titleService.setTitle('Explore');
+    this.current_title = this.titleService.getTitle();
     document.getElementById('Explore')?.children[0].children[0].classList.add('active-mat-icon');
     document.getElementById('Explore')?.children[0].children[0].classList.remove('material-icons-outlined');
   }

@@ -19,7 +19,6 @@ import { EventsComponent } from './events/events.component';
 import { MapComponent } from './map/map.component';
 import { PersonalComponent } from './personal/personal.component';
 import { ExploreComponent } from './explore/explore.component';
-import { DiscoverComponent } from './discover/discover.component';
 import { EventCardComponent } from './event-card/event-card.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
@@ -50,7 +49,6 @@ import { environment } from '../environments/environment';
     MapComponent,
     PersonalComponent,
     ExploreComponent,
-    DiscoverComponent,
     EventCardComponent,
     LoginComponent,
     RegisterComponent,

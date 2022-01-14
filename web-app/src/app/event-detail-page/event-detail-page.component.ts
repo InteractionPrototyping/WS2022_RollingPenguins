@@ -2,21 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import EventsJson from '../../assets/events/events.json';
 import{ GlobalConstants } from '../common/global-constants';
+import { IEvent } from '../common/IEvent';
 
-
-
-interface EVENT {
-  id: number;
-  name: string;
-  saved: boolean;
-  description: string;
-  date: string;
-  picture: string;
-  position: {
-    lat: number;
-    lng: number;
-  }
-}
 
 @Component({
   selector: 'app-event-detail-page',
@@ -25,7 +12,7 @@ interface EVENT {
 })
 export class EventDetailPageComponent implements OnInit {
   id = 0;
-  EventList: EVENT[] = EventsJson;
+  EventList: IEvent[] = EventsJson;
   event = this.EventList[0];
   toggle!: string;
 
@@ -50,7 +37,7 @@ export class EventDetailPageComponent implements OnInit {
 
     
   }
-  toggleFavorite(event: EVENT) {
+  toggleFavorite(event: IEvent) {
     event.saved = !event.saved;
     if (event.saved) {
       this.toggle = "REMOVE";

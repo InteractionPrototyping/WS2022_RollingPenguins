@@ -1,20 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { EventCardComponent } from '../event-card/event-card.component';
+import { Title } from '@angular/platform-browser';
 import {FormGroup, FormControl} from '@angular/forms';
 import EventsJson from '../../assets/events/events.json';
-
-interface EVENT {
-  id: number;
-  name: string;
-  saved: boolean;
-  description: string;
-  date: string;
-  picture: string;
-  position: {
-    lat: number;
-    lng: number;
-  }
-}
+import { IEvent } from '../common/IEvent';
 
 @Component({
   selector: 'app-explore',
@@ -22,7 +11,7 @@ interface EVENT {
   styleUrls: ['./explore.component.scss']
 })
 export class ExploreComponent implements OnInit {
-  EventList: EVENT[] = EventsJson;
+  EventList: IEvent[] = EventsJson;
 
   // public picker?: NgxMaterialTimepickerModule<Date>;
   constructor() { }
