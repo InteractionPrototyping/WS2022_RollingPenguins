@@ -7,13 +7,13 @@
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" id="login-cred">
         <mat-form-field appearance="fill">
             <mat-label>Enter your email</mat-label>
-            <input matInput type="text" placeholder="pat@example.com" formControlName="email" [formControl]="email" required>
+            <input matInput type="text" placeholder="interaction@prototyping.io" formControlName="email" [formControl]="email" required>
             <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
         </mat-form-field>
 
         <mat-form-field appearance="fill">
             <mat-label>Enter your password</mat-label>
-            <input formControlName="password" matInput [type]="hide ? 'password' : 'text'">
+            <input formControlName="password" matInput [type]="hide ? 'password' : 'text'" placeholder="At least 8 chars">
             <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hidePswd">
                 <mat-icon>{{hidePswd ? 'visibility_off' : 'visibility'}}</mat-icon>
             </button>

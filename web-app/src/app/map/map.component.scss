@@ -5,9 +5,9 @@ main {
 }
 #search {
   position: fixed;
-  top: 64px;
-  left: 8px;
-  width: calc(100% - 16px);
+  top: 72px;
+  left: 16px;
+  width: calc(100% - 32px);
   z-index: 1;
   ::ng-deep .mat-form-field-flex {
     background-color: rgb(45, 45, 45);

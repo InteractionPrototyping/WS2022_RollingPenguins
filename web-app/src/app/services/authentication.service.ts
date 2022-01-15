@@ -44,10 +44,8 @@ export class AuthenticationService {
   }
 
   public register(username: string, email: string, password: string, useLocation: boolean) {
-    alert(this.server + 'users/register' + username + email + password + useLocation);
     return this.http.post<any>(this.server + 'users/register', { username, email, password, useLocation })
       .pipe(map(user => {
-        alert(user);
         // login successful if there's a jwt token in the response
         if (user && user.token) {
           localStorage.setItem(this.userLocalStorageKey, JSON.stringify(user));
