@@ -39,14 +39,14 @@ export class EventDetailPageComponent implements OnInit {
           .getUserById(currUserId)
           .pipe(first())
           .subscribe(
-            (data: any) => {
+            (data) => {
               if(data.myEvents.includes(this.id)) {
                 this.toggle = 'REMOVE'
               } else {
                 this.toggle = 'SAVE'
               }
             },
-            (error: any) => {
+            (error) => {
             }
           );
       }
@@ -56,7 +56,7 @@ export class EventDetailPageComponent implements OnInit {
   handleShare() {
     this.authenticationService.getAllUsers()
       .pipe(first())
-      .subscribe((data: any) => {
+      .subscribe((data) => {
         this.shareUsers = data
         this.showShare = true
       })
@@ -66,7 +66,7 @@ export class EventDetailPageComponent implements OnInit {
     this.authenticationService.recommendEvent(event.id, user._id)
       .pipe(first())
       .subscribe(
-        (data: any) => {
+        (data) => {
         }
       )
   }

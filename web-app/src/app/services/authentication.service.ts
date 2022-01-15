@@ -61,6 +61,31 @@ export class AuthenticationService {
     // this.currentUserSubject.next(null);
   }
 
+  public getUserById(userId: string) {
+    return this.http.post<any>('http://localhost:4500/users/getUserById', { userId })
+    .pipe(map(user => {
+      return user;
+    }));
+  }
+
+  public getAllUsers() {
+    return this.http.get<any>('http://localhost:4500/users/getAllUsers')
+    .pipe(map(user => {
+      return user;
+    }));
+  }
+
+  public recommendEvent(eventId: number, forUserId: string) {
+    const recommenderId = this.currentUserValue.user._id;
+    return this.http.post<any>('http://localhost:4500/users/recommendEvent', {
+      eventId,
+      recommenderId,
+      forUserId
+    }).pipe(map(result => {
+      return result
+    }));
+  }
+
   public saveEvent(eventId: number) {
     const userId = this.currentUserValue.user._id;
     return this.http.post<any>(this.server + 'users/saveEvent', { userId, eventId })
