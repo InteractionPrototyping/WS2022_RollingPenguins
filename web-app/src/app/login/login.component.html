@@ -7,22 +7,20 @@
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" id="login-cred">
         <mat-form-field appearance="fill">
             <mat-label>Enter your email</mat-label>
-            <input matInput placeholder="pat@example.com" formControlName="email" [formControl]="email" required>
+            <input matInput type="text" placeholder="pat@example.com" formControlName="email" [formControl]="email" required>
             <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
         </mat-form-field>
 
         <mat-form-field appearance="fill">
             <mat-label>Enter your password</mat-label>
             <input formControlName="password" matInput [type]="hide ? 'password' : 'text'">
-            <button mat-icon-button matSuffix (click)="hidePswd = !hidePswd" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hidePswd">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hidePswd">
                 <mat-icon>{{hidePswd ? 'visibility_off' : 'visibility'}}</mat-icon>
             </button>
         </mat-form-field>
         <div id="login-buttons">
-            <button mat-raised-button color="primary" label="Login">Login</button>
+            <button mat-button label="Register" routerLink="/register">Create new account</button>
+            <button mat-raised-button color="primary" label="Login" type = "submit" >Login</button>
         </div>
     </form>
-    <div id="register-button">
-        <!--button mat-button label="Register" (click)="register()">Register</button-->
-    </div>
 </main>

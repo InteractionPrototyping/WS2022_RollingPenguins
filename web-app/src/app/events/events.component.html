@@ -1,21 +1,28 @@
 <main>
   <section id="today">
     <h2>Today</h2>
-    <div class="event-card" *ngFor="let event of FavList"> 
+    <div class="event-card" *ngFor="let event of FavList">
       <app-event-card [event]="event"></app-event-card>
     </div>
   </section>
 
   <section id="friends">
     <h2>Friend Suggestions</h2>
-    <div class="event-card" *ngFor="let event of FavList"> 
+    <div class="event-card" *ngFor="let event of FavList">
       <app-event-card [event]="event"></app-event-card>
+
+    </div>
+    <div *ngIf="recommendations && recommendations.length > 0">
+      <div *ngFor="let event of recommendations">
+        <div>{{event.eventId}} {{event.username}}</div>
+
+      </div>
     </div>
   </section>
 
   <section id="upcoming">
     <h2>Upcoming</h2>
-    <div class="event-card" *ngFor="let event of FavList"> 
+    <div class="event-card" *ngFor="let event of FavList">
       <app-event-card [event]="event"></app-event-card>
     </div>
   </section>

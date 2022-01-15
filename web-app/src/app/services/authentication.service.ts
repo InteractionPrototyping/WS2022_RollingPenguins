@@ -9,11 +9,12 @@ import { User } from '../common/User';
   providedIn: 'root'
 })
 export class AuthenticationService {
+  [x: string]: any;
   private currentUserSubject: BehaviorSubject<User>;
   public currentUser: Observable<User>;
 
   //private server: string = 'https://ux-curve-backend.herokuapp.com/';
-  private server: string = 'http://localhost:4500/';
+  private server: string = 'https://eventfinderapp.herokuapp.com/';
 
   private userLocalStorageKey: string = 'currentUser';
 
@@ -40,22 +41,58 @@ export class AuthenticationService {
       }));
   }
 
+  public register(username: string, email: string, password: string, useLocation: boolean) {
+    alert(this.server + 'users/register' + username + email + password + useLocation);
+    return this.http.post<any>(this.server + 'users/register', { username, email, password, useLocation })
+      .pipe(map(user => {
+        alert(user);
+        // login successful if there's a jwt token in the response
+        if (user && user.token) {
+          localStorage.setItem(this.userLocalStorageKey, JSON.stringify(user));
+          this.currentUserSubject.next(user);
+        }
+
+        return user;
+      }));
+  }
+
   public logout() {
     localStorage.removeItem(this.userLocalStorageKey);
     // this.currentUserSubject.next(null);
   }
 
   public saveEvent(eventId: number) {
-    
     const userId = this.currentUserValue.user._id;
-    
-    
-    return this.http.post<any>('http://localhost:4500/users/saveEvent', { userId: '61e14a1cc0a0cc26f96edf5c', eventId: 2 })
+    return this.http.post<any>(this.server + 'users/saveEvent', { userId, eventId })
       .pipe(map(user => {
-        console.log(user);
         // login successful if there's a jwt token in the response
 
         return user;
       }));
+  }
+
+  public getUserById(userId: string) {
+    return this.http.post<any>(this.server + 'users/getUserById', { userId })
+    .pipe(map(user => {
+      return user;
+    }));
+  }
+
+  public getAllUsers() {
+    return this.http.get<any>(this.server + 'users/getAllUsers')
+    .pipe(map(user => {
+      return user;
+    }));
+  }
+
+  public recommendEvent(eventId: number, forUserId: string) {
+    const recommenderId = this.currentUserValue.user._id;
+    return this.http.post<any>(this.server + 'users/recommendEvent', {
+      eventId,
+      recommenderId,
+      forUserId
+    }).pipe(map(result => {
+      return result
+    }));
   }
 }

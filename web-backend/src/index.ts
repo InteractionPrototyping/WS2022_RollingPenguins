@@ -1,7 +1,10 @@
 import express from 'express';
 import cors from 'cors';
+
 import { connectToDatabase } from './database/database-connection';
 import { userRoute } from './routes/user.route';
+
+
 //jsonwebtoken
 const allowedOrigins = ['http://localhost:4214', 'https://interactionprototyping.github.io'];
 

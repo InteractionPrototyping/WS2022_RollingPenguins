@@ -7,9 +7,11 @@ import { MapComponent } from './map/map.component';
 import { PersonalComponent } from './personal/personal.component';
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './common/auth.guard';
+import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
   { path: 'explore', component: ExploreComponent, canActivate:[AuthGuard] },
   { path: 'map', component: MapComponent, canActivate:[AuthGuard]  },
   { path: 'events', component: EventsComponent, canActivate:[AuthGuard]  },

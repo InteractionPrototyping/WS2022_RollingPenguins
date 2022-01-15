@@ -11,6 +11,9 @@ import { BottomNavModule } from 'ngx-bottom-nav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+
+
 
 
 
@@ -82,7 +85,8 @@ import { JwtInterceptor } from './common/jwt.interceptor';
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000'
     }),
-    HttpClientModule
+    HttpClientModule,
+    MatSlideToggleModule
   ],
   providers: [
     Title,
