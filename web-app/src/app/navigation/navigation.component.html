@@ -17,19 +17,19 @@
 
 <div id="bottom-nav-wrapper">
   <ngx-bottom-nav>
-    <button ngx-bottom-nav label="Explore" routerLink="/explore" id="custom-styled-ngx-nav-button" (click)="setDocTitle('Explore', 'explore')" id="Explore">
+    <button ngx-bottom-nav label="Explore" routerLink="/explore" id="custom-styled-ngx-nav-button" (click)="setDocTitle('explore')" id="Explore">
       <mat-icon ngxBottomNavIcon class="material-icons-outlined">category</mat-icon>
     </button>
     
-    <button ngx-bottom-nav label="Map" routerLink="/map" id="custom-styled-ngx-nav-button" (click)="setDocTitle('Map', 'map')" id="Map">
+    <button ngx-bottom-nav label="Map" routerLink="/map" id="custom-styled-ngx-nav-button" (click)="setDocTitle('map')" id="Map">
       <mat-icon ngxBottomNavIcon class="material-icons-outlined">explore</mat-icon>
     </button>
     
-    <button ngx-bottom-nav label="My Events" routerLink="/events" id="custom-styled-ngx-nav-button" (click)="setDocTitle('My Events', 'events')" id="MyEvents">
+    <button ngx-bottom-nav label="My Events" routerLink="/events" id="custom-styled-ngx-nav-button" (click)="setDocTitle('events')" id="MyEvents">
       <mat-icon [matBadge]="savedEventsCounter" matBadgeColor="accent" [matBadgeHidden]="visibilitySavedEventsCounter" ngxBottomNavIcon class="material-icons-outlined">local_activity</mat-icon>
     </button>
 
-    <button ngx-bottom-nav label="Profile" routerLink="/profile" id="custom-styled-ngx-nav-button" style="color: white" (click)="setDocTitle('Profile', 'profile')" id="Profile">
+    <button ngx-bottom-nav label="Profile" routerLink="/profile" id="custom-styled-ngx-nav-button" style="color: white" (click)="setDocTitle('profile')" id="Profile">
       <mat-icon ngxBottomNavIcon class="material-icons-outlined">account_circle</mat-icon>
     </button>
   </ngx-bottom-nav>

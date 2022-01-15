@@ -4,3 +4,14 @@ main {
 .event-card {
     margin: 16px 0px;
 }
+#empty {
+    position: absolute;
+    top: 40%;
+    left: 0;
+    text-align: center;
+    width: 100%;
+    button {
+        margin: 16px;
+        width: 40%;
+    }
+}

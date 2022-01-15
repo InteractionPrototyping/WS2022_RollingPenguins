@@ -28,7 +28,9 @@ export class RegisterComponent implements OnInit {
     private router: Router,
     private authenticationService: AuthenticationService,
     private titleService: Title
-  ) { } 
+  ) { 
+    this.titleService.setTitle("EventFinder");
+  } 
 
 
   ngOnInit() {

@@ -1,30 +1,21 @@
 <main>
-  <section id="today">
-    <h2>Today</h2>
+  <section id="upcoming" *ngIf="FavList && FavList.length > 0">
     <div class="event-card" *ngFor="let event of FavList">
       <app-event-card [event]="event"></app-event-card>
     </div>
   </section>
 
-  <section id="friends">
-    <h2>Friend Suggestions</h2>
-    <div class="event-card" *ngFor="let event of FavList">
-      <app-event-card [event]="event"></app-event-card>
-
-    </div>
-    <div *ngIf="recommendations && recommendations.length > 0">
-      <div *ngFor="let event of recommendations">
-        <div>{{event.eventId}} {{event.username}}</div>
-
-      </div>
-    </div>
-  </section>
-
-  <section id="upcoming">
-    <h2>Upcoming</h2>
-    <div class="event-card" *ngFor="let event of FavList">
-      <app-event-card [event]="event"></app-event-card>
-    </div>
+  <section id="empty" *ngIf="FavList && FavList.length == 0">
+    <h2>
+      You have no events saved so far.
+    </h2>
+    <h2>
+      Start by adding events to your list from:
+    </h2>
+    <mat-card-actions>
+      <button mat-raised-button routerLink="/explore" color="primary">Explore</button>
+      <button mat-raised-button routerLink="/map" color="primary">Map</button>
+  </mat-card-actions>
   </section>
 
 </main>

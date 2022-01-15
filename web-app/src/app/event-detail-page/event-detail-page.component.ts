@@ -13,7 +13,7 @@ import { AuthenticationService } from '../services/authentication.service';
   styleUrls: ['./event-detail-page.component.scss'],
 })
 export class EventDetailPageComponent implements OnInit {
-  id = 0;
+  id: number;
   EventList: IEvent[] = EventsJson;
   event = this.EventList[0];
   toggle!: string;
@@ -25,6 +25,7 @@ export class EventDetailPageComponent implements OnInit {
     private authenticationService: AuthenticationService
   ) {
     this.id = this.route.snapshot.params.id;
+    console.log(this.id);
   }
 
   ngOnInit(): void {
@@ -41,7 +42,7 @@ export class EventDetailPageComponent implements OnInit {
           .subscribe(
             (data) => {
               if(data.myEvents.includes(this.id)) {
-                this.toggle = 'REMOVE'
+                this.toggle = 'REMOVE';
               } else {
                 this.toggle = 'SAVE'
               }
@@ -79,9 +80,11 @@ export class EventDetailPageComponent implements OnInit {
       .subscribe(
         (data) => {
           if(data.myEvents.includes(event.id+'')) {
-            this.toggle = 'SAVE'
+            this.toggle = 'SAVE';
+            GlobalConstants.savedEventsCounter--;
           } else {
-            this.toggle = 'REMOVE'
+            this.toggle = 'REMOVE';
+            GlobalConstants.savedEventsCounter++;
           }
         },
         (error) => {
@@ -89,17 +92,7 @@ export class EventDetailPageComponent implements OnInit {
           //this.loading = false;
         }
       );
-    /*event.saved = !event.saved;
-    if (event.saved) {
-      this.toggle = 'REMOVE';
-      GlobalConstants.savedEventsCounter++;
-      GlobalConstants.visibilitySavedEventsCounter = false;
-    } else {
-      this.toggle = 'SAVE';
-      GlobalConstants.savedEventsCounter--;
-      if (GlobalConstants.savedEventsCounter == 0) {
-        GlobalConstants.visibilitySavedEventsCounter = true;
-      }
-    }*/
+
   }
+
 }

@@ -4,6 +4,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { User } from '../common/User';
+import { GlobalConstants } from '../common/global-constants';
 
 @Injectable({
   providedIn: 'root'
@@ -36,7 +37,8 @@ export class AuthenticationService {
           localStorage.setItem(this.userLocalStorageKey, JSON.stringify(user));
           this.currentUserSubject.next(user);
         }
-
+        //console.log(user.user);
+        GlobalConstants.savedEventsCounter = user.user.myEvents.length;
         return user;
       }));
   }
@@ -76,11 +78,18 @@ export class AuthenticationService {
     return this.http.post<any>(this.server + 'users/saveEvent', { userId, eventId })
       .pipe(map(user => {
         // login successful if there's a jwt token in the response
-
         return user;
       }));
   }
 
+  public getSavedEvents() {
+    const userId = this.currentUserValue.user._id;
+    return this.http.post<any>(this.server + 'users/getSavedEvents', { userId })
+      .pipe(map(user => {
+        // login successful if there's a jwt token in the response
+        return user;
+      }));
+  }
 
 
   public getAllUsers() {

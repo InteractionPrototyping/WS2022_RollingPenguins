@@ -45,7 +45,6 @@ import { HttpClient, HttpClientModule, HttpHeaders, HTTP_INTERCEPTORS } from '@a
 import { JwtInterceptor } from './common/jwt.interceptor';
 
 
-
 @NgModule({
   declarations: [
     AppComponent,

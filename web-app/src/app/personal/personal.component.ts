@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
-
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-personal',
@@ -12,7 +12,11 @@ export class PersonalComponent implements OnInit {
   requiresLogin: boolean = true ; // shown by default
   requiresRegister: boolean = false ; // shown by default
 
-  constructor() { }
+  constructor(
+    private titleService: Title
+  ) { 
+    this.titleService.setTitle("Profile");
+  }
 
   ngOnInit(): void {
   }

@@ -22,6 +22,10 @@
   <!--input [ngxTimepicker]="picker">
   <ngx-material-timepicker #picker></ngx-material-timepicker-->
 
+  <div class="search-hero">
+    <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442;  Start searching for a hero by id or name or country">
+  </div>
+
   <div class="event-card" *ngFor="let event of EventList"> 
     <app-event-card [event]="event"></app-event-card>
   </div>

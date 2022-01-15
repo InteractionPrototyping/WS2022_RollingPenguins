@@ -28,7 +28,9 @@ export class LoginComponent implements OnInit {
     private router: Router,
     private authenticationService: AuthenticationService,
     private titleService: Title
-  ) { } 
+  ) { 
+    this.titleService.setTitle("EventFinder");
+  } 
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({

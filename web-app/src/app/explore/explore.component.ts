@@ -12,9 +12,12 @@ import { IEvent } from '../common/IEvent';
 })
 export class ExploreComponent implements OnInit {
   EventList: IEvent[] = EventsJson;
+  searchText!: string;
 
   // public picker?: NgxMaterialTimepickerModule<Date>;
-  constructor() { }
+  constructor(private titleService: Title) { 
+    this.titleService.setTitle("Explore");
+  }
 
   ngOnInit(): void {
   }

@@ -1,6 +1,7 @@
 import { Component, OnInit, DoCheck} from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import{ GlobalConstants } from '../common/global-constants';
+import { AuthenticationService } from '../services/authentication.service';
 
 
 @Component({
@@ -13,23 +14,28 @@ export class NavigationComponent implements OnInit {
   back = this.current_title;
   subpage = false;
 
-  visibilitySavedEventsCounter = GlobalConstants.visibilitySavedEventsCounter;
-  savedEventsCounter = GlobalConstants.savedEventsCounter;
+  visibilitySavedEventsCounter!: boolean;
+  savedEventsCounter!: number;
 
 
-  constructor(private titleService: Title) {
+  constructor(
+    private titleService: Title, 
+    private authenticationService: AuthenticationService) {
   }
 
   
   
 
-  setDocTitle(title: string, route: string) {
+  setDocTitle(route: string) {
     document.getElementById('subpage')?.classList.add('subpage');
-    this.current_title = title;
-    this.titleService.setTitle(title);
+    this.current_title = this.titleService.getTitle();
+    
     this.subpage = false;
     this.back = route;    
 
+    this.setNavigation();
+ }
+ setNavigation() {
     document.getElementById('Explore')?.children[0].children[0].classList.remove('active-mat-icon');
     document.getElementById('Explore')?.children[0].children[0].classList.add('material-icons-outlined');
 
@@ -41,25 +47,33 @@ export class NavigationComponent implements OnInit {
 
     document.getElementById('Profile')?.children[0].children[0].classList.remove('active-mat-icon');
     document.getElementById('Profile')?.children[0].children[0].classList.add('material-icons-outlined');
-
-    document.getElementById(title.replace(/\s/g, ""))?.children[0].children[0].classList.remove('material-icons-outlined');
-    document.getElementById(title.replace(/\s/g, ""))?.children[0].children[0].classList.add('active-mat-icon');
+    document.getElementById(this.titleService.getTitle().replace(/\s/g, ""))?.children[0].children[0].classList.remove('material-icons-outlined');
+    document.getElementById(this.titleService.getTitle().replace(/\s/g, ""))?.children[0].children[0].classList.add('active-mat-icon');
  }
 
   hideBackButton() {
     document.getElementById('subpage')?.classList.add('subpage');
   }
 
-  ngOnInit(): void {
-    this.current_title = this.titleService.getTitle();
-    document.getElementById('Explore')?.children[0].children[0].classList.add('active-mat-icon');
-    document.getElementById('Explore')?.children[0].children[0].classList.remove('material-icons-outlined');
+  ngOnInit(): void {  
+    const currUserId = this.authenticationService.currentUserValue.user._id;
+    this.authenticationService.getUserById(currUserId).subscribe(
+      (data: any) => {
+        GlobalConstants.savedEventsCounter = data.myEvents.length;
+      },
+      (error: any) => {}
+    ); 
   }
 
   ngDoCheck(): void {
-    this.visibilitySavedEventsCounter = GlobalConstants.visibilitySavedEventsCounter;
+    this.current_title = this.titleService.getTitle();
+    this.setNavigation();
     this.savedEventsCounter = GlobalConstants.savedEventsCounter;
+    if (GlobalConstants.savedEventsCounter <= 0) {
+      GlobalConstants.visibilitySavedEventsCounter = true;
+    } else {
+      GlobalConstants.visibilitySavedEventsCounter = false;
+    }
+    this.visibilitySavedEventsCounter = GlobalConstants.visibilitySavedEventsCounter;
   }
-  
-  
 }
