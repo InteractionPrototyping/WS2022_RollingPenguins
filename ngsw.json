@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1641898675342,
+  "timestamp": 1642268843713,
   "index": "https://interactionprototyping.github.io/WS2022_RollingPenguins/index.html",
   "assetGroups": [
     {
@@ -13,11 +13,11 @@
       "urls": [
         "https://interactionprototyping.github.io/WS2022_RollingPenguins/favicon.ico",
         "https://interactionprototyping.github.io/WS2022_RollingPenguins/index.html",
-        "https://interactionprototyping.github.io/WS2022_RollingPenguins/main.2c6f41ff3a59536dd6de.js",
+        "https://interactionprototyping.github.io/WS2022_RollingPenguins/main.093120489b0bfa833ce7.js",
         "https://interactionprototyping.github.io/WS2022_RollingPenguins/manifest.webmanifest",
         "https://interactionprototyping.github.io/WS2022_RollingPenguins/polyfills.87a11347cf0c0046e7b1.js",
         "https://interactionprototyping.github.io/WS2022_RollingPenguins/runtime.9d64c6924cf2d8f4665b.js",
-        "https://interactionprototyping.github.io/WS2022_RollingPenguins/styles.9e9b824b262bcfe9ad02.css"
+        "https://interactionprototyping.github.io/WS2022_RollingPenguins/styles.ec7701abaf21d36654ab.css"
       ],
       "patterns": []
     },
@@ -30,6 +30,14 @@
       },
       "urls": [
         "https://interactionprototyping.github.io/WS2022_RollingPenguins/assets/events/bu_events.json",
+        "https://interactionprototyping.github.io/WS2022_RollingPenguins/assets/events/event_icons/attractions.png",
+        "https://interactionprototyping.github.io/WS2022_RollingPenguins/assets/events/event_icons/bakery_dining.png",
+        "https://interactionprototyping.github.io/WS2022_RollingPenguins/assets/events/event_icons/fastfood.png",
+        "https://interactionprototyping.github.io/WS2022_RollingPenguins/assets/events/event_icons/liquor.png",
+        "https://interactionprototyping.github.io/WS2022_RollingPenguins/assets/events/event_icons/local_dining.png",
+        "https://interactionprototyping.github.io/WS2022_RollingPenguins/assets/events/event_icons/maps_home_work.png",
+        "https://interactionprototyping.github.io/WS2022_RollingPenguins/assets/events/event_icons/music_note.png",
+        "https://interactionprototyping.github.io/WS2022_RollingPenguins/assets/events/event_icons/wine_bar.png",
         "https://interactionprototyping.github.io/WS2022_RollingPenguins/assets/events/events.json",
         "https://interactionprototyping.github.io/WS2022_RollingPenguins/assets/events/hero-images/bummsvoll.jpg",
         "https://interactionprototyping.github.io/WS2022_RollingPenguins/assets/events/hero-images/croenlein.jpg",
@@ -68,7 +76,15 @@
   "dataGroups": [],
   "hashTable": {
     "https://interactionprototyping.github.io/WS2022_RollingPenguins/assets/events/bu_events.json": "7142c498fe4b16d61c33e64a1d07e60971c161b6",
-    "https://interactionprototyping.github.io/WS2022_RollingPenguins/assets/events/events.json": "23b479f85e2b098a71ed96619aac9be940a7937d",
+    "https://interactionprototyping.github.io/WS2022_RollingPenguins/assets/events/event_icons/attractions.png": "23c2dcbae7fc30057fa389832a31e4de1641a7f2",
+    "https://interactionprototyping.github.io/WS2022_RollingPenguins/assets/events/event_icons/bakery_dining.png": "454659d663dca680581c8c440189f675eaaf149e",
+    "https://interactionprototyping.github.io/WS2022_RollingPenguins/assets/events/event_icons/fastfood.png": "4cd476e0b3487ca8929b9f862319ac720cf55881",
+    "https://interactionprototyping.github.io/WS2022_RollingPenguins/assets/events/event_icons/liquor.png": "a7c03e2d1507a9d3da553b86e1b3bd812ef5c5dd",
+    "https://interactionprototyping.github.io/WS2022_RollingPenguins/assets/events/event_icons/local_dining.png": "15204a8733dcfdd3251af6f51568f449b3e8bc10",
+    "https://interactionprototyping.github.io/WS2022_RollingPenguins/assets/events/event_icons/maps_home_work.png": "95a5f6728875d23971376e8a06b35a35ead486b0",
+    "https://interactionprototyping.github.io/WS2022_RollingPenguins/assets/events/event_icons/music_note.png": "0a74e2dbfac8d1427defe356d7c241a7cb90409e",
+    "https://interactionprototyping.github.io/WS2022_RollingPenguins/assets/events/event_icons/wine_bar.png": "b5955315b43aedea2479c35d1dfe7b2f5c4eae52",
+    "https://interactionprototyping.github.io/WS2022_RollingPenguins/assets/events/events.json": "0c37d8924300059e9111350674a711852904c01d",
     "https://interactionprototyping.github.io/WS2022_RollingPenguins/assets/events/hero-images/bummsvoll.jpg": "66fff720bb2ebba9b5ed7d593f19084bd0a14172",
     "https://interactionprototyping.github.io/WS2022_RollingPenguins/assets/events/hero-images/croenlein.jpg": "4ed5c35a82035f8b25d5d2aef84eab66f9fd7023",
     "https://interactionprototyping.github.io/WS2022_RollingPenguins/assets/events/hero-images/gorilla.jpg": "83725c674e35e03329be01918cf0ad9e21abf550",
@@ -99,13 +115,13 @@
     "https://interactionprototyping.github.io/WS2022_RollingPenguins/assets/splash/launch-640x1136.png": "e0c947f6d251d4688d1cac1619604bda7d555f13",
     "https://interactionprototyping.github.io/WS2022_RollingPenguins/assets/splash/launch-750x1294.png": "16bcd08b881713a0faa35333964523bdc8153c24",
     "https://interactionprototyping.github.io/WS2022_RollingPenguins/favicon.ico": "a1714e4465f8329f04e2ed1499653b910101f6c7",
-    "https://interactionprototyping.github.io/WS2022_RollingPenguins/index.html": "11640f605c271c620e181c939ee9d5883115cdc5",
+    "https://interactionprototyping.github.io/WS2022_RollingPenguins/index.html": "454fae81ac6d992819d082065cf11cb95f5a53ea",
     "https://interactionprototyping.github.io/WS2022_RollingPenguins/login_background.8ccd0ae3f0c388b05f20.jpg": "9d35fe9069d8224280e9f5b9e2d7b6f5638f6cfc",
-    "https://interactionprototyping.github.io/WS2022_RollingPenguins/main.2c6f41ff3a59536dd6de.js": "aec2669e3bd060f897142da653cfbc6626ceb456",
+    "https://interactionprototyping.github.io/WS2022_RollingPenguins/main.093120489b0bfa833ce7.js": "c3da92e70a0ad69c9beb990b27c2b9812b5913ec",
     "https://interactionprototyping.github.io/WS2022_RollingPenguins/manifest.webmanifest": "b232b664c546ec470b900e9ae57a5f8a5deedb41",
     "https://interactionprototyping.github.io/WS2022_RollingPenguins/polyfills.87a11347cf0c0046e7b1.js": "0e918657e84e4fd68d3484dbc332c834f4b672a2",
     "https://interactionprototyping.github.io/WS2022_RollingPenguins/runtime.9d64c6924cf2d8f4665b.js": "d7fee1afe8548b510cb56ce2fb3a000ca81fb984",
-    "https://interactionprototyping.github.io/WS2022_RollingPenguins/styles.9e9b824b262bcfe9ad02.css": "2d4b15c88b98198392c8709bcfc660aed1a2db6c"
+    "https://interactionprototyping.github.io/WS2022_RollingPenguins/styles.ec7701abaf21d36654ab.css": "8d9deab364e3772e3991e9e89da252b1cfea49a7"
   },
   "navigationUrls": [
     {
