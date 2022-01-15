@@ -5,7 +5,7 @@ import signJWT from '../functions/signJWT';
 
 const register = (req: Request, res: Response) => {
     // Get user info from body
-    const { email, useLocation, username, password } = req.body;
+    const { username, email, password, useLocation } = req.body;
   
     if (!email || !username || !password) {
       // Return error if not all infos are provided
