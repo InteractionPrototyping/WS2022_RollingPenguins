@@ -20,7 +20,10 @@ export class NavigationComponent implements OnInit {
 
   constructor(
     private titleService: Title, 
-    private authenticationService: AuthenticationService) {
+    private authenticationService: AuthenticationService
+    ) 
+  {
+
   }
 
   

@@ -12,7 +12,7 @@ import { IEvent } from '../common/IEvent';
 })
 export class ExploreComponent implements OnInit {
   EventList: IEvent[] = EventsJson;
-  searchText!: string;
+  searchText: any;
 
   // public picker?: NgxMaterialTimepickerModule<Date>;
   constructor(private titleService: Title) { 

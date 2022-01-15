@@ -30,6 +30,7 @@
     "@types/proj4": "^2.5.2",
     "angular-cli-ghpages": "^1.0.0-rc.2",
     "moment": "^2.29.1",
+    "ng2-search-filter": "^0.5.1",
     "ngx-bottom-nav": "^11.0.0",
     "ngx-material-timepicker": "^5.5.3",
     "ol": "^6.9.0",

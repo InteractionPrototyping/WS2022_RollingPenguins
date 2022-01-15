@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule, Title } from '@angular/platform-browser';
 import { GoogleMapsModule } from '@angular/google-maps';
-
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -44,6 +44,8 @@ import { environment } from '../environments/environment';
 import { HttpClient, HttpClientModule, HttpHeaders, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { JwtInterceptor } from './common/jwt.interceptor';
 
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
 
 @NgModule({
   declarations: [
@@ -85,7 +87,9 @@ import { JwtInterceptor } from './common/jwt.interceptor';
       registrationStrategy: 'registerWhenStable:30000'
     }),
     HttpClientModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    Ng2SearchPipeModule,
+    FormsModule
   ],
   providers: [
     Title,

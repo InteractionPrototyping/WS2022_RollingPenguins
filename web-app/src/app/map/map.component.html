@@ -1,4 +1,9 @@
 <main>
+    <mat-form-field id="search" appearance="fill">
+        <mat-label>Search</mat-label>
+        <input matInput class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder='e.g. "Cafe"'>
+        <mat-icon matSuffix>search</mat-icon>
+      </mat-form-field>
     <google-map 
         height="100%" 
         width="100%"
@@ -8,7 +13,7 @@
         (mapClick)="hideMapCard()"
         >
         <map-marker id="event-marker"
-            *ngFor="let marker of EventMarker"
+            *ngFor="let marker of EventMarker | filter:searchText"
             [position]="marker.position"
             [icon]="marker.icon"
             [title]="marker.assignedEvent.name"

@@ -2,49 +2,25 @@
 <form id="profile-form">
 
 
-    <img src="./assets/img/profilePic.png" id="profilePic">
+    <span id="app-icon" class="material-icons-outlined">
+        celebration
+    </span>
+    <h1>
+        Hi <span id="username">{{username}} </span>
+    </h1>
+    <p>
+        Nothing else to do here!
+    </p>
 
     <mat-form-field class="full-width" appearance="fill">
-        <mat-label>First Name</mat-label>
-        <input matInput>
+        <mat-label>Username</mat-label>
+        <input matInput readonly [placeholder]="username" [value]="username">
     </mat-form-field>
 
     <mat-form-field class="full-width" appearance="fill">
-        <mat-label>Last Name</mat-label>
-        <input matInput>
+        <mat-label>Email</mat-label>
+        <input matInput readonly [placeholder]="email" [value]="email">
     </mat-form-field>
-  
-    <mat-form-field class="full-width" appearance="fill">
-        <mat-label>Enter your email</mat-label>
-        <input matInput placeholder="pat@example.com" [formControl]="email" required>
-        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
-    </mat-form-field>
-
-    <mat-form-field class="full-width" appearance="fill">
-        <mat-label>Enter your password</mat-label>
-        <input matInput [type]="hide ? 'password' : 'text'">
-        <button mat-icon-button matSuffix (click)="hidePswd = !hidePswd" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hidePswd">
-            <mat-icon>{{hidePswd ? 'visibility_off' : 'visibility'}}</mat-icon>
-        </button>
-    </mat-form-field>
-
-    <!--mat-form-field class="full-width" appearance="fill">
-        <mat-label>Location</mat-label>
-        <input matInput value="Munich">
-    </mat-form-field-->
-
-    <!--mat-form-field class="full-width" appearance="fill">
-        <mat-label>Radius</mat-label>
-        <mat-select>
-          <mat-option value="one">2 km</mat-option>
-          <mat-option value="two">5 km</mat-option>
-          <mat-option value="two">10 km</mat-option>
-          <mat-option value="two">20 km</mat-option>
-          <mat-option value="two">40 km</mat-option>
-          <mat-option value="two">80 km</mat-option>
-        </mat-select>
-        <mat-icon matPrefix>gps_fixed</mat-icon>
-      </mat-form-field-->
 
   </form>
 </main>

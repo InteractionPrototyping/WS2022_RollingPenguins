@@ -22,11 +22,15 @@
   <!--input [ngxTimepicker]="picker">
   <ngx-material-timepicker #picker></ngx-material-timepicker-->
 
-  <div class="search-hero">
-    <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442;  Start searching for a hero by id or name or country">
-  </div>
+    <mat-form-field id="search" appearance="fill">
+      <mat-label>Search</mat-label>
+      <input matInput class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder='e.g. "Cafe"'>
+      <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field>
 
-  <div class="event-card" *ngFor="let event of EventList"> 
+
+
+  <div class="event-card" *ngFor="let event of EventList | filter:searchText"> 
     <app-event-card [event]="event"></app-event-card>
   </div>
     

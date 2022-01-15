@@ -31,6 +31,8 @@ export class MapComponent {
   EventMarker: IEventMarker[] = Array(0);
   selected_event = this.EventList[0];
 
+  searchText: any;
+  
   // Currently placeholder for the users location
   center: google.maps.LatLngLiteral = {
     lat: 48.137154,

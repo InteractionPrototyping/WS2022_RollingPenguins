@@ -7,8 +7,16 @@ main {
 .event-card {
     margin: 16px 0px;
 }
-.search-hero {
-    max-width: 500px;
-    padding-bottom: 50px;
-    margin:auto;
-  }
+#search {
+    width: calc(100% + 16px);
+    margin-top: -8px;
+    margin-left: -8px;
+    ::ng-deep .mat-form-field-flex {
+        background-color: rgb(45, 45, 45);
+        border-radius: 8px;
+      }
+      ::ng-deep .mat-form-field-underline {
+        width: calc(100% - 16px);
+        margin-left: 8px;
+      }
+}

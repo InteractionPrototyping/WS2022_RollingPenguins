@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
 import { Title } from '@angular/platform-browser';
+import { AuthenticationService } from '../services/authentication.service';
 
 @Component({
   selector: 'app-personal',
@@ -8,38 +9,26 @@ import { Title } from '@angular/platform-browser';
   styleUrls: ['./personal.component.scss']
 })
 export class PersonalComponent implements OnInit {
-  hidePswd: boolean = true;
-  requiresLogin: boolean = true ; // shown by default
-  requiresRegister: boolean = false ; // shown by default
+
+  username = "Test";
+  email = "test@test.de";
 
   constructor(
-    private titleService: Title
+    private titleService: Title,
+    private authenticationService: AuthenticationService
   ) { 
     this.titleService.setTitle("Profile");
   }
 
   ngOnInit(): void {
-  }
-  hide() {
-    this.requiresLogin = false;
-    document.getElementById('router-outlet')?.classList.remove('hidden');
-  }
-  register() {
-    this.requiresRegister = true;
-    this.requiresLogin = false;
-  }
-  login() {
-    this.requiresLogin = true;
-    this.requiresRegister = false;
+    const currUserId = this.authenticationService.currentUserValue.user._id;
+    this.authenticationService.getUserById(currUserId).subscribe(
+      (data: any) => {
+        this.username = data.username;
+        this.email = data.email;
+      },
+      (error: any) => {}
+    ); 
   }
 
-  email = new FormControl('', [Validators.required, Validators.email]);
-
-  getErrorMessage() {
-    if (this.email.hasError('required')) {
-      return 'You must enter a value';
-    }
-
-    return this.email.hasError('email') ? 'Not a valid email' : '';
-  }
 }
