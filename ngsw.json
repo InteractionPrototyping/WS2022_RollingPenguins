@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1642284169493,
+  "timestamp": 1642371303958,
   "index": "https://interactionprototyping.github.io/WS2022_RollingPenguins/index.html",
   "assetGroups": [
     {
@@ -13,11 +13,11 @@
       "urls": [
         "https://interactionprototyping.github.io/WS2022_RollingPenguins/favicon.ico",
         "https://interactionprototyping.github.io/WS2022_RollingPenguins/index.html",
-        "https://interactionprototyping.github.io/WS2022_RollingPenguins/main.850815e47f66901b02e7.js",
+        "https://interactionprototyping.github.io/WS2022_RollingPenguins/main.b577affe6cce864c90b9.js",
         "https://interactionprototyping.github.io/WS2022_RollingPenguins/manifest.webmanifest",
         "https://interactionprototyping.github.io/WS2022_RollingPenguins/polyfills.87a11347cf0c0046e7b1.js",
         "https://interactionprototyping.github.io/WS2022_RollingPenguins/runtime.9d64c6924cf2d8f4665b.js",
-        "https://interactionprototyping.github.io/WS2022_RollingPenguins/styles.ec7701abaf21d36654ab.css"
+        "https://interactionprototyping.github.io/WS2022_RollingPenguins/styles.29d42e76d94b7c34c8f9.css"
       ],
       "patterns": []
     },
@@ -131,13 +131,13 @@
     "https://interactionprototyping.github.io/WS2022_RollingPenguins/assets/splash/launch-640x1136.png": "e0c947f6d251d4688d1cac1619604bda7d555f13",
     "https://interactionprototyping.github.io/WS2022_RollingPenguins/assets/splash/launch-750x1294.png": "16bcd08b881713a0faa35333964523bdc8153c24",
     "https://interactionprototyping.github.io/WS2022_RollingPenguins/favicon.ico": "a1714e4465f8329f04e2ed1499653b910101f6c7",
-    "https://interactionprototyping.github.io/WS2022_RollingPenguins/index.html": "000b1f99d46a701c10c8ca2e9bc640f7cb52d42c",
+    "https://interactionprototyping.github.io/WS2022_RollingPenguins/index.html": "4588c4ec768835385ea9becceac676eb3c12892b",
     "https://interactionprototyping.github.io/WS2022_RollingPenguins/login_background.8ccd0ae3f0c388b05f20.jpg": "9d35fe9069d8224280e9f5b9e2d7b6f5638f6cfc",
-    "https://interactionprototyping.github.io/WS2022_RollingPenguins/main.850815e47f66901b02e7.js": "93be1a2e3276d11ca64e764e6ba88aece9e5e2e3",
+    "https://interactionprototyping.github.io/WS2022_RollingPenguins/main.b577affe6cce864c90b9.js": "89f853ceaa93525dd6e295e80a6ae23a6c305bc7",
     "https://interactionprototyping.github.io/WS2022_RollingPenguins/manifest.webmanifest": "b232b664c546ec470b900e9ae57a5f8a5deedb41",
     "https://interactionprototyping.github.io/WS2022_RollingPenguins/polyfills.87a11347cf0c0046e7b1.js": "0e918657e84e4fd68d3484dbc332c834f4b672a2",
     "https://interactionprototyping.github.io/WS2022_RollingPenguins/runtime.9d64c6924cf2d8f4665b.js": "d7fee1afe8548b510cb56ce2fb3a000ca81fb984",
-    "https://interactionprototyping.github.io/WS2022_RollingPenguins/styles.ec7701abaf21d36654ab.css": "8d9deab364e3772e3991e9e89da252b1cfea49a7"
+    "https://interactionprototyping.github.io/WS2022_RollingPenguins/styles.29d42e76d94b7c34c8f9.css": "be27c318b721e9790ed6f2d97f3eae7a98f69d99"
   },
   "navigationUrls": [
     {
