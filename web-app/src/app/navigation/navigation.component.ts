@@ -2,6 +2,7 @@ import { Component, OnInit, DoCheck} from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import{ GlobalConstants } from '../common/global-constants';
 import { AuthenticationService } from '../services/authentication.service';
+import { Location } from '@angular/common'
 
 
 @Component({
@@ -20,7 +21,8 @@ export class NavigationComponent implements OnInit {
 
   constructor(
     private titleService: Title, 
-    private authenticationService: AuthenticationService
+    private authenticationService: AuthenticationService,
+    private location: Location
     ) 
   {
 
@@ -55,6 +57,7 @@ export class NavigationComponent implements OnInit {
  }
 
   hideBackButton() {
+    this.location.back();
     document.getElementById('subpage')?.classList.add('subpage');
   }
 

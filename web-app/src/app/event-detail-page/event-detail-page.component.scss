@@ -5,3 +5,13 @@ mat-card-actions {
     text-align: right;
     margin-right: 16px;
 }
+#google-map-container {
+    height: calc(60vw - 56px);
+    overflow-y: hidden;
+    margin-bottom: 64px;
+}
+google-map {
+    width: calc(100vw - 32px);
+    height: calc(60vw - 32px);
+    display: block;
+}

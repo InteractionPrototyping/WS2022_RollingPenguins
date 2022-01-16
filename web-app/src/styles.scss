@@ -1,47 +1,18 @@
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
 @use '~@angular/material' as mat;
+
 // Plus imports for other components in your app.
 
-// Include the common styles for Angular Material. We include this here so that you only
-// have to load a single css file for Angular Material in your app.
-// Be sure that you only ever include this mixin once!
+// Include the common styles for Angular Material. 
 @include mat.core();
 
-// Define the palettes for your theme using the Material Design palettes available in palette.scss
-// (imported above). For each palette, you can optionally specify a default, lighter, and darker
-// hue. Available color palettes: https://material.io/design/color/
-$web-app-primary: mat.define-palette(mat.$indigo-palette);
-$web-app-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+/* Global styles and other style files */
+@import '~@angular/material/theming'; // styling of material design components
+@import '~ngx-bottom-nav/theming'; // styling of the bottom navigation
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined"); // Material Icons Font
 
-// The warn palette is optional (defaults to red).
-$web-app-warn: mat.define-palette(mat.$red-palette);
-
-// Create the theme object. A theme consists of configurations for individual
-// theming systems such as "color" or "typography".
-$web-app-theme: mat.define-light-theme((
-  color: (
-    primary: $web-app-primary,
-    accent: $web-app-accent,
-    warn: $web-app-warn,
-  )
-));
-
-// Include theme styles for core and each component used in your app.
-// Alternatively, you can import and @include the theme mixins for each component
-// that you are using.
-@include mat.all-component-themes($web-app-theme);
-
-/* You can add global styles to this file, and also import other style files */
-@import '~@angular/material/theming';
-@import '~ngx-bottom-nav/theming'; // <-- include SASS lib file
-@import "../node_modules/ol/ol.css";
-@import url("https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined");
-
-
-@include mat.core();
-
-
+// Custom color scheme
 $md-primary: (
     50 : #ffe0e0,
     100 : #ffb3b3,
@@ -75,6 +46,7 @@ $md-primary: (
     )
 );
 
+// Not used in the app, but must be defined
 $md-accent: (
     50 : #e0ffff,
     100 : #b3ffff,
@@ -108,24 +80,12 @@ $md-accent: (
     )
 );
 
-
-
+// Define variables for Material Design color scheme
 $angular-primary: mat.define-palette($md-primary, 500, 100, 900);
 $angular-accent: mat.define-palette($md-accent, A100, 100, 900);
 $angular-warn: mat.define-palette($md-primary);
 
-$angular-default-theme: mat.define-light-theme(
-  (
-    color: (
-      primary: $angular-primary,
-      accent: $angular-accent,
-      warn: $angular-warn,
-    ),
-  )
-);
-
-@include mat.all-component-themes($angular-default-theme);
-
+// Define full color scheme for Material Design
 $angular-dark-theme: mat.define-dark-theme(
   (
     color: (
@@ -136,32 +96,43 @@ $angular-dark-theme: mat.define-dark-theme(
   )
 );
 
+// Set color scheme for Angular app and components
 @include mat.all-component-colors($angular-dark-theme);
 @include angular-material-theme($angular-dark-theme);
 @include ngx-bottom-nav-theme($angular-dark-theme);
 
+// Make text better legible
+$my-custom-typography: mat.define-typography-config(
+  $headline: mat.define-typography-level(1.8rem, 1, 700),
+  $title: mat.define-typography-level(1.6rem, 1, 700),
+  $subheading-2: mat.define-typography-level(1.4rem, 1, 700),
+  $subheading-1: mat.define-typography-level(1.2rem, 1, 700),
+  $body-1: mat.define-typography-level(1rem, 1.5, 400),
+  $body-2: mat.define-typography-level(1rem, 1.5, 700),
+  $caption: mat.define-typography-level(0.8rem, 1.5, 400),
+  $button: mat.define-typography-level(1rem, 1, 700),
+  $input: mat.define-typography-level(1rem, 1, 400)
+);
+// Include overwritten text style
+@include mat.core($my-custom-typography);
 
-
-
-
-html, body { height: 100%; }
-body { 
-    margin: 0; 
-    background-color: #111111;
-    min-height: 100vh;
-    touch-action: manipulation;
+// General styling
+html, body { 
+  min-height: 100%;
+  margin: 0; 
+  background-color: #111111;
+  min-height: 100vh;
+  touch-action: manipulation;
+  font-size: 18px;
+  
 }
 * {
-  font-family: "Montserrat"; 
-  touch-action: manipulation;
+  font-family: "Montserrat", sans-serif;
 }
 
 
 // Global variables
 :root{
   --base-color: red;
-  
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

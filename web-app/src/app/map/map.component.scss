@@ -1,11 +1,11 @@
 main {
     position: fixed;
-    height: calc(100% - 80px - 16px - 56px);
+    height: calc(100% - 72px);
     width: 100%;
 }
 #search {
   position: fixed;
-  top: 72px;
+  top: 16px;
   left: 16px;
   width: calc(100% - 32px);
   z-index: 1;

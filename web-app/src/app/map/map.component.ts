@@ -53,7 +53,7 @@ export class MapComponent {
     scrollwheel: true,
     disableDoubleClickZoom: false,
     gestureHandling: "greedy",
-    zoom: 15,
+    zoom: 14,
     maxZoom: 50,
     minZoom: 4,
     mapId: "ee691f8617d29770",

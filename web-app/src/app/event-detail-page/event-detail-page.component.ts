@@ -6,6 +6,8 @@ import { GlobalConstants } from '../common/global-constants';
 import { IEvent } from '../common/IEvent';
 import { User } from '../common/User';
 import { AuthenticationService } from '../services/authentication.service';
+import { MatDialog } from '@angular/material/dialog';
+import { NavDialogComponent } from './nav-dialog/nav-dialog.component';
 
 @Component({
   selector: 'app-event-detail-page',
@@ -20,15 +22,28 @@ export class EventDetailPageComponent implements OnInit {
   showShare = false;
   shareUsers: User[] = [];
 
+  // Google Maps
+  marker: any;
+  center: any;
+  options: google.maps.MapOptions = {
+    gestureHandling: "none",
+    zoomControl: false,
+    disableDoubleClickZoom: false,
+    zoom: 16,
+    mapId: "ee691f8617d29770",
+    disableDefaultUI: true,
+  } as google.maps.MapOptions;
+
   constructor(
     private route: ActivatedRoute,
-    private authenticationService: AuthenticationService
+    private authenticationService: AuthenticationService,
+    public dialog: MatDialog
   ) {
     this.id = this.route.snapshot.params.id;
-    console.log(this.id);
   }
 
   ngOnInit(): void {
+    scrollTo(0, 0);
     document.getElementById('subpage')?.classList.remove('subpage');
 
     this.EventList.forEach((element) => {
@@ -52,6 +67,15 @@ export class EventDetailPageComponent implements OnInit {
           );
       }
     });
+    this.center = this.event.position;
+    this.marker = {
+      position: this.center,
+      icon: {
+        url: "./assets/events/event_icons/" + this.event.category + ".png",
+        anchor: new google.maps.Point(0, 0),
+        scaledSize: new google.maps.Size(30, 30),
+      }
+    };
   }
 
   handleShare() {
@@ -94,5 +118,9 @@ export class EventDetailPageComponent implements OnInit {
       );
 
   }
-
+  openDialog() {
+    GlobalConstants.navigationLink = `https://maps.google.com/?q=${this.event.position.lat},${this.event.position.lng}`;
+    const dialogRef = this.dialog.open(NavDialogComponent);
+  }
+  
 }

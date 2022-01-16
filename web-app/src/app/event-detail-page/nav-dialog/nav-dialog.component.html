@@ -1,0 +1,9 @@
+<h3 mat-dialog-title>Open Google Maps?</h3>
+<mat-dialog-content class="mat-typography">
+  <p>Do you want to leave EventFinder to navigate to your event?</p>
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button [mat-dialog-close]="true" cdkFocusInitial (click)="openNavigation()">Open Maps</button>
+</mat-dialog-actions>

@@ -34,6 +34,10 @@ import { FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { MatDialogModule } from '@angular/material/dialog';
+
+
+
 import * as moment from 'moment';
 import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
 import { MatBadgeModule } from '@angular/material/badge';
@@ -45,6 +49,7 @@ import { HttpClient, HttpClientModule, HttpHeaders, HTTP_INTERCEPTORS } from '@a
 import { JwtInterceptor } from './common/jwt.interceptor';
 
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { NavDialogComponent } from './event-detail-page/nav-dialog/nav-dialog.component';
 
 
 @NgModule({
@@ -59,7 +64,8 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     EventCardComponent,
     LoginComponent,
     RegisterComponent,
-    EventDetailPageComponent
+    EventDetailPageComponent,
+    NavDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -89,12 +95,14 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     HttpClientModule,
     MatSlideToggleModule,
     Ng2SearchPipeModule,
-    FormsModule
+    FormsModule,
+    MatDialogModule
   ],
   providers: [
     Title,
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [NavDialogComponent]
 })
 export class AppModule { }

@@ -15,4 +15,39 @@
         <div (click)="handleShareUser(event, user)">{{user.username}}</div>
       </div>
     </div-->
+    <h2>Navigation</h2>
+    <div id="google-map-container">
+      <google-map 
+          height="100%" 
+          width="100%"
+          [center]="center"
+          [options]="options"
+          mapId="ee691f8617d29770"
+          (mapClick) = "openDialog()"
+          >
+          <map-marker id="event-marker"
+              [position]="marker.position"
+              [icon]="marker.icon"
+              (mapClick) = "openDialog()"
+          >
+          </map-marker>
+      </google-map>
+    </div>
+
+    <h2>More to come</h2>
+    <ul>
+      <li>How about sharing events with friends?</li>
+      <li>See how many and who else is attending an event?</li>
+      <li>Planning your own private or public events?</li>
+      <li>Buy tickets via the app and skip the line in front of the club?</li>
+    </ul>
+
+    <h2>What else?</h2>
+    <p>Tell us your ideas via email and install the app to your homescreen. <br>It is a progressive web app!</p>
+    <mat-card-actions>
+        <!--button mat-button (click)="handleShare()">SHARE</button-->
+        <a mat-raised-button href="mailto:vingeobrun@gmail.com">Contact</a>
+    </mat-card-actions>
+
+    
 </main>

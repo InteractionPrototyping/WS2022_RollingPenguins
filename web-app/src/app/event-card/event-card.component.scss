@@ -7,3 +7,18 @@ img {
     background-color: #252525;
     object-fit: cover;
 }
+#EventCard {
+    padding-bottom: 24px;
+
+    overflow: hidden;
+    ::ng-deep .mat-card-content {
+        display: block;
+        word-wrap: break-word;
+        overflow: hidden;
+        max-height: 6rem;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 4; // max nb lines to show
+        -webkit-box-orient: vertical;
+    }
+}
