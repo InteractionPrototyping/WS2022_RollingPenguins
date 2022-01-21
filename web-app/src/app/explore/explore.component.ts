@@ -100,6 +100,7 @@ export class ExploreComponent {
 	}
 
 	// shows or hides the date filter and clears the value after toggeling the filter
+	dateVal!: string;
 	toggleFilter() {
 		this.showAdditionalFilters = !this.showAdditionalFilters;
 		this.emptyVal = "";

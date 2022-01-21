@@ -7,13 +7,13 @@
 			<mat-icon matSuffix (click)=emptySearch()>{{searchIcon}}</mat-icon>
 		</mat-form-field>
 		<button id="toggleFilterBtn" mat-flat-button (click)=toggleFilter()>
-			<mat-icon> {{filterIcon}}</mat-icon>
+			<mat-icon>{{filterIcon}}</mat-icon>
 		</button>
 	</nav>
-	<section *ngIf=showAdditionalFilters>
+	<section [hidden]="!showAdditionalFilters">
 		<mat-form-field id="datepicker" class="full-width" appearance="fill">
 			<mat-label>Date</mat-label>
-			<input matInput [matDatepicker]="dp" #dateElem [(ngModel)]="emptyVal">
+			<input matInput [matDatepicker]="dp" #dateElem [value]="dateVal" [(ngModel)]="emptyVal">
 			<mat-datepicker-toggle matSuffix [for]="dp">
 			</mat-datepicker-toggle>
 			<mat-datepicker #dp touchUi></mat-datepicker>

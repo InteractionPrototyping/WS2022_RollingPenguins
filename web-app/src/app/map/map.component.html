@@ -7,7 +7,7 @@
         </mat-form-field>
         <button id="toggleFilterBtn" mat-flat-button (click)=toggleFilter()><mat-icon> {{filterIcon}}</mat-icon></button>
     </nav>
-    <section *ngIf="showAdditionalFilters">
+    <section [hidden]="!showAdditionalFilters">
     <mat-form-field id="datepicker" class="full-width" appearance="fill">
         <mat-label>Date</mat-label>
         <input matInput [matDatepicker]="dp" #dateElem [(ngModel)]="emptyVal">
