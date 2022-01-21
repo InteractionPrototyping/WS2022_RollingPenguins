@@ -1,12 +1,9 @@
 <mat-toolbar>
-	<button mat-icon-button *ngIf="subpage" id="subpage" (click)="goBackInBrowserHistory()">
+	<button mat-icon-button class="subpage" id="subpage" (click)="goBackInBrowserHistory()">
 		<mat-icon>arrow_back</mat-icon>
 	</button>
 	<span id="current-title">{{ current_title }}</span>
 	<span class="nav-spacer"></span>
-	<button mat-icon-button *ngIf="subpage">
-		<mat-icon>favorite</mat-icon>
-	</button>
 </mat-toolbar>
 
 

@@ -33,9 +33,6 @@ export class NavigationComponent implements OnInit {
 	// Saves the current title of the web application. Should be changed depending on the current module.
 	current_title!: string;
 
-	// Represents the back button. Only visible on the event detail page.
-	subpage = false;
-
     /* 
 	* Represents the badge on the "My Events" tab and shows the amount of saved events if any
 	* Will be synchronized with the global constants, as easy/lazy implementation for adding/removing events and adapting the interface for the user.
@@ -48,7 +45,7 @@ export class NavigationComponent implements OnInit {
 
 	// Function is called when clicking on one of the main components from the nav bar
 	changeRoute(route: string) {
-		this.subpage = false; // as it is a main component, no back button is needed
+		document.getElementById('subpage')?.classList.add('subpage'); // as it is a main component, no back button is needed
 		this.current_title = this.titleService.getTitle(); // change current html title
 		this.setNavBarIcons();
 	}
@@ -76,7 +73,7 @@ export class NavigationComponent implements OnInit {
 	// Is called when the user clicks on the back button on the event detail page. 
 	goBackInBrowserHistory() {
 		this.location.back(); // Goes to the last page of the browser history of the corresponding page.
-		this.subpage = false; // As currently the user never comes from another detail page, but the map and explore component, no back button is needed
+		document.getElementById('subpage')?.classList.add('subpage'); // As currently the user never comes from another detail page, but the map and explore component, no back button is needed
 	}
 
 	ngDoCheck(): void {

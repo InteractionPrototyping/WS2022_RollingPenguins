@@ -5,6 +5,7 @@ import { IEvent } from '../common/IEvent';
 import { AuthenticationService } from '../services/authentication.service';
 import { Title } from '@angular/platform-browser';
 import { GlobalConstants } from '../common/global-constants';
+import moment from 'moment';
 
 @Component({
 	selector: 'app-events',
@@ -12,10 +13,20 @@ import { GlobalConstants } from '../common/global-constants';
 	styleUrls: ['./events.component.scss'],
 })
 export class EventsComponent implements OnInit {
-	// L
 	EventList: IEvent[] = EventsJson; // Load all available events from the local storrage to the component
 	FavList: IEvent[] = Array(0); // Initializes an empty array, so push and pull can used to add or remove events to the favorites list
 	showEmptyCard!: boolean; // If no events are in the favorites list, the empty screen placeholder is displayed instead
+
+
+	/* 
+	* sort by date using "moment" to interpret the given string format
+	* an easier implementation would have been to give the standard date format in the events list instead, but there we go
+	*/ 
+	get sortedFavorites() {
+		return this.FavList.sort((a, b) => {
+			return <any>moment(a.date, "MMMM Do, YYYY") - <any>moment(b.date, "MMMM Do, YYYY")
+		});
+	}
 
 	constructor(
 		private titleService: Title,
@@ -30,7 +41,7 @@ export class EventsComponent implements OnInit {
 		this.authenticationService.getUserById(currUserId).subscribe(
 			(data: any) => {
 				data.myEvents.forEach((eventId: number) => {
-					this.FavList.push(this.EventList[eventId - 1]);
+					this.FavList.push(this.EventList[eventId-1]);
 				});
 			},
 			(error: any) => { }

@@ -57,14 +57,14 @@ export class ExploreComponent {
 
 
 	EventList: IEvent[] = EventsJson; // load all available events from the local storrage to the component
-
+	cloneEvents = Array.from(this.EventList); // Quick and dirty: Angular keeps "EventList" saved in the local storage. The sorting algorithm leads to problems with the "My Events" area. Thus, we work on a copy of the array.
 
 	/* 
 	* sort by date using "moment" to interpret the given string format
 	* an easier implementation would have been to give the standard date format in the events list instead, but there we go
 	*/ 
 	get sortedEvents() {
-		return this.EventList.sort((a, b) => {
+		return this.cloneEvents.sort((a, b) => {
 			return <any>moment(a.date, "MMMM Do, YYYY") - <any>moment(b.date, "MMMM Do, YYYY")
 		});
 	}

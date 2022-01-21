@@ -32,7 +32,11 @@ export class EventDetailPageComponent implements OnInit {
 		private router: Router
 	) {
 		this.id = this.route.snapshot.params.id; // get id from URL
-		this.event = this.EventList.filter(event => event.id == this.id)[0]; // set event via URL-id and locally storred events
+		this.EventList.forEach(event => {
+			if(event.id == this.id) {
+				this.event = event; // set event via URL-id and locally storred events
+			}
+		});
 	}
 
 	
@@ -71,8 +75,8 @@ export class EventDetailPageComponent implements OnInit {
 			.pipe(first())
 			.subscribe(
 				(data) => {
-					if (data.myEvents.includes(this.id + '')) {
-						this.toggle = 'SAVE'; //
+					if (!data.myEvents.includes("" + this.event.id)) {
+						this.toggle = 'SAVE';
 						this.eventState = "primary";
 					} else {
 						this.toggle = 'REMOVE';
