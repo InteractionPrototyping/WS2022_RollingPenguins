@@ -1,17 +1,52 @@
-main {
-    margin: 16px;
+#upcoming {
+    padding: 16px;
+    .event-card {
+        margin: 16px 0px;
+    }
 }
-.event-card {
-    margin: 16px 0px;
-}
+
+
 #empty {
-    position: absolute;
-    top: 40%;
-    left: 0;
-    text-align: center;
-    width: 100%;
-    button {
-        margin: 16px;
-        width: 40%;
+    height: calc(100vh - 96px - 32px);
+    overflow: hidden;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    #emptyCard {
+        border: 8px dashed grey;
+        padding-bottom: 24px;
+        background-color: #111111;
+        button {
+            margin: 8px;
+            width: calc(50% - 16px);
+        }
+        img {
+            max-height: 30vh;
+            background-color: #ffffff;
+            object-fit: contain;
+        }
+    }
+
+
+}
+
+
+mat-card-subtitle {
+    display: flex;
+    flex-direction: row;
+    div {
+        margin-right: 24px;
+        height: 32px;
+        display: flex;
+        flex-direction: row;
+        mat-icon {
+            margin-right: 8px;
+            height: 32px;
+        }
+        span {
+            height: 32px;
+        }
     }
 }

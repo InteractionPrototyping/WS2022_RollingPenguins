@@ -1,3 +1,4 @@
+/* Is set in front the route in the routing-module to check if the user is logged in */
 import { Injectable } from '@angular/core';
 import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 

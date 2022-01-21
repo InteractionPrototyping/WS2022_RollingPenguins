@@ -1,13 +1,4 @@
-mat-card-actions {
-    display: flex;
-    justify-content: flex-end;
-}
-img {
-    max-height: 40vh;
-    background-color: #252525;
-    object-fit: cover;
-}
-#EventCard {
+.event-card {
     padding-bottom: 24px;
 
     overflow: hidden;
@@ -21,4 +12,40 @@ img {
         -webkit-line-clamp: 4; // max nb lines to show
         -webkit-box-orient: vertical;
     }
+
+    #head {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    img {
+        max-height: 40vh;
+        background-color: #252525;
+        object-fit: cover;
+    }
+
+    mat-card-subtitle {
+        display: flex;
+        flex-direction: row;
+        div {
+            margin-right: 24px;
+            height: 32px;
+            display: flex;
+            flex-direction: row;
+            mat-icon {
+                margin-right: 8px;
+                height: 32px;
+            }
+            span {
+                height: 32px;
+            }
+        }
+    }
+
+    mat-card-actions {
+        display: flex;
+        justify-content: flex-end;
+    }
 }
+
+

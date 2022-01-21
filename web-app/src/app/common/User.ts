@@ -1,3 +1,4 @@
+/* Outlines the User format */
 export class User {
     username!: string;
     email!: string;

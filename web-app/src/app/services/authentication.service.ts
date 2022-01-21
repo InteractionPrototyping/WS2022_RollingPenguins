@@ -14,7 +14,6 @@ export class AuthenticationService {
   private currentUserSubject: BehaviorSubject<User>;
   public currentUser: Observable<User>;
 
-  //private server: string = 'https://ux-curve-backend.herokuapp.com/';
   private server: string = 'https://eventfinderapp.herokuapp.com/';
 
   private userLocalStorageKey: string = 'currentUser';
@@ -31,13 +30,11 @@ export class AuthenticationService {
   public login(email: string, password: string) {
     return this.http.post<any>(this.server + 'users/login', { email, password })
       .pipe(map(user => {
-        console.log(user);
         // login successful if there's a jwt token in the response
         if (user && user.token) {
           localStorage.setItem(this.userLocalStorageKey, JSON.stringify(user));
           this.currentUserSubject.next(user);
         }
-        //console.log(user.user);
         GlobalConstants.savedEventsCounter = user.user.myEvents.length;
         return user;
       }));
@@ -58,9 +55,9 @@ export class AuthenticationService {
 
   public logout() {
     localStorage.removeItem(this.userLocalStorageKey);
-    // this.currentUserSubject.next(null);
   }
 
+  // Retrieves the user and all the data of the profile
   public getUserById(userId: string) {
     return this.http.post<any>(this.server + 'users/getUserById', { userId })
     .pipe(map(user => {
@@ -68,9 +65,7 @@ export class AuthenticationService {
     }));
   }
 
-
-
-
+  // Adds an event to the saved events list on the server
   public saveEvent(eventId: number) {
     const userId = this.currentUserValue.user._id;
     return this.http.post<any>(this.server + 'users/saveEvent', { userId, eventId })
@@ -80,23 +75,16 @@ export class AuthenticationService {
       }));
   }
 
-  public getSavedEvents() {
-    const userId = this.currentUserValue.user._id;
-    return this.http.post<any>(this.server + 'users/getSavedEvents', { userId })
-      .pipe(map(user => {
-        // login successful if there's a jwt token in the response
-        return user;
-      }));
-  }
-
-
+  /* Is never been used. Would be neccessary for more social functions.
   public getAllUsers() {
     return this.http.get<any>(this.server + 'users/getAllUsers')
     .pipe(map(user => {
       return user;
     }));
   }
+  */
 
+  /* Has not been implemented. Would allow to reccomend events to other users directly from the app.
   public recommendEvent(eventId: number, forUserId: string) {
     const recommenderId = this.currentUserValue.user._id;
     return this.http.post<any>(this.server + 'users/recommendEvent', {
@@ -107,4 +95,5 @@ export class AuthenticationService {
       return result
     }));
   }
+  */ 
 }

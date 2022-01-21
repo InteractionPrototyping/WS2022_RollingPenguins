@@ -7,8 +7,18 @@ main {
 .event-card {
     margin: 16px 0px;
 }
+::ng-deep .mat-form-field-wrapper {
+    max-height: 64px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+}
 #search {
-    width: calc(100%);
+    margin-right: 8px;
+}
+#search, #datepicker {
     //margin-top: -8px;
     //margin-left: -8px;
     margin-bottom: -16px;
@@ -20,4 +30,9 @@ main {
         width: calc(100% - 8px);
         margin-left: 4px;
       }
+}
+
+#toggleFilterBtn {
+    height: 64px;
+    background-color: #2d2d2d;
 }

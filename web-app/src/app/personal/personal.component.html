@@ -1,26 +1,22 @@
 <main>
-<form id="profile-form">
+    <form id="profile-form">
+        <span id="app-icon" class="material-icons-outlined">
+            celebration
+        </span>
+        <h1>
+            Hi <span id="username">{{username}} </span>
+        </h1>
 
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Username</mat-label>
+            <input matInput readonly [placeholder]="username" [value]="username">
+        </mat-form-field>
 
-    <span id="app-icon" class="material-icons-outlined">
-        celebration
-    </span>
-    <h1>
-        Hi <span id="username">{{username}} </span>
-    </h1>
-    <p>
-        Nothing else to do here!
-    </p>
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Email</mat-label>
+            <input matInput readonly [placeholder]="email" [value]="email">
+        </mat-form-field>
 
-    <mat-form-field class="full-width" appearance="fill">
-        <mat-label>Username</mat-label>
-        <input matInput readonly [placeholder]="username" [value]="username">
-    </mat-form-field>
-
-    <mat-form-field class="full-width" appearance="fill">
-        <mat-label>Email</mat-label>
-        <input matInput readonly [placeholder]="email" [value]="email">
-    </mat-form-field>
-
-  </form>
+        <a mat-raised-button color="primary" label="Login" href="https://interactionprototyping.github.io/WS2022_RollingPenguins/logout">Logout</a>
+    </form>
 </main>

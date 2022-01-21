@@ -110,7 +110,7 @@ $my-custom-typography: mat.define-typography-config(
   $body-1: mat.define-typography-level(1rem, 1.5, 400),
   $body-2: mat.define-typography-level(1rem, 1.5, 700),
   $caption: mat.define-typography-level(0.8rem, 1.5, 400),
-  $button: mat.define-typography-level(1rem, 1, 700),
+  $button: mat.define-typography-level(16px, 1, 700),
   $input: mat.define-typography-level(1rem, 1, 400)
 );
 // Include overwritten text style

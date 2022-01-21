@@ -4,60 +4,46 @@ import EventsJson from '../../assets/events/events.json';
 import { IEvent } from '../common/IEvent';
 import { AuthenticationService } from '../services/authentication.service';
 import { Title } from '@angular/platform-browser';
+import { GlobalConstants } from '../common/global-constants';
 
 @Component({
-  selector: 'app-events',
-  templateUrl: './events.component.html',
-  styleUrls: ['./events.component.scss'],
+	selector: 'app-events',
+	templateUrl: './events.component.html',
+	styleUrls: ['./events.component.scss'],
 })
 export class EventsComponent implements OnInit {
-  EventList: IEvent[] = EventsJson;
-  FavList: IEvent[] = Array(0);
-  SuggestedList: IEvent[] = Array(0);
-  recommendations!: any[];
+	// L
+	EventList: IEvent[] = EventsJson; // Load all available events from the local storrage to the component
+	FavList: IEvent[] = Array(0); // Initializes an empty array, so push and pull can used to add or remove events to the favorites list
+	showEmptyCard!: boolean; // If no events are in the favorites list, the empty screen placeholder is displayed instead
 
-  constructor(
-    private titleService: Title,
-    private authenticationService: AuthenticationService
-    ) {
-      this.titleService.setTitle("My Events");
-    }
+	constructor(
+		private titleService: Title,
+		private authenticationService: AuthenticationService
+	) {
+		this.titleService.setTitle("My Events");
+	}
 
-  ngOnInit(): void {
-    // = this.EventList.filter((event) => event.saved);
-    const currUserId = this.authenticationService.currentUserValue.user._id;
+	ngOnInit(): void {
+		const currUserId = this.authenticationService.currentUserValue.user._id;
 
-    this.authenticationService.getUserById(currUserId).subscribe(
-      (data: any) => {
-        console.log(data);
+		this.authenticationService.getUserById(currUserId).subscribe(
+			(data: any) => {
+				data.myEvents.forEach((eventId: number) => {
+					this.FavList.push(this.EventList[eventId - 1]);
+				});
+			},
+			(error: any) => { }
+		);
 
-        data.myEvents.forEach((eventId: number) => {
-          this.FavList.push(this.EventList[eventId-1]);
-        });
-        
+	}
 
-        data.suggestedEvents.forEach((suggestion: any) => {
-          this.SuggestedList.push(this.EventList[suggestion.eventId-1]);
-        });
+	/* 
+	* Easy workaround to define if the empty screen placeholder should be displayed
+	* One could ask the server but then there is always a delay, so using the already defined local value makes more sens
+	*/
+	ngDoCheck(): void {
+		this.showEmptyCard = GlobalConstants.visibilitySavedEventsCounter;
+	}
 
-        this.recommendations = data.suggestedEvents;
-        this.recommendations.forEach((rec) => {
-          this.authenticationService.getUserById(rec.suggester).subscribe((data: any) => {
-            // Data hier ist der User, der das event empfohlen hat. In dem Fall hab ich einfach nur den username ausgelesen und dann mit in das objekt gepackt
-            rec.username = data.username
-          });
-        });
-      },
-      (error: any) => {}
-    );    
-
-  }
-
-
-  getUsernameById(userId: string) {
-    this.authenticationService.getUserById(userId).subscribe((data: any) => {
-      console.log(data);
-      return 'a';
-    });
-  }
 }

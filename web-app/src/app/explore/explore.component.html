@@ -1,38 +1,29 @@
 <main>
-  <!--mat-form-field appearance="fill" class="full-width">
-    <mat-label>Enter a date range</mat-label>
-    <mat-date-range-input [formGroup]="range" [rangePicker]="picker">
-      <input matStartDate formControlName="start" placeholder="Start date">
-      <input matEndDate formControlName="end" placeholder="End date">
-    </mat-date-range-input>
-    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-    <mat-date-range-picker #picker></mat-date-range-picker>
-
-    <mat-error *ngIf="range.controls.start.hasError('matStartDateInvalid')">Invalid start date</mat-error>
-    <mat-error *ngIf="range.controls.end.hasError('matEndDateInvalid')">Invalid end date</mat-error>
-  </mat-form-field-->
-
-  <!--mat-form-field class="full-width" appearance="fill" >
-    <mat-label>Date & Time</mat-label>
-    <input matInput type="datetime-local" placeholder="start date">
-  </mat-form-field-->
-
-  <!--input [ngxTimepicker]="picker">
-<ngx-material-timepicker #picker></ngx-material-timepicker-->
-  <!--input [ngxTimepicker]="picker">
-  <ngx-material-timepicker #picker></ngx-material-timepicker-->
-
-    <mat-form-field id="search" appearance="fill">
-      <mat-label>Search</mat-label>
-      <input matInput class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder='e.g. "Cafe"'>
-      <mat-icon matSuffix>search</mat-icon>
-    </mat-form-field>
+	<nav>
+		<mat-form-field id="search" class="full-width" appearance="fill">
+			<mat-label>Search</mat-label>
+			<input matInput class="form-control" type="text" name="search" [(ngModel)]="search.text" autocomplete="off"
+				placeholder='e.g. "Cafe"'>
+			<mat-icon matSuffix (click)=emptySearch()>{{searchIcon}}</mat-icon>
+		</mat-form-field>
+		<button id="toggleFilterBtn" mat-flat-button (click)=toggleFilter()>
+			<mat-icon> {{filterIcon}}</mat-icon>
+		</button>
+	</nav>
+	<section *ngIf=showAdditionalFilters>
+		<mat-form-field id="datepicker" class="full-width" appearance="fill">
+			<mat-label>Date</mat-label>
+			<input matInput [matDatepicker]="dp" #dateElem [(ngModel)]="emptyVal">
+			<mat-datepicker-toggle matSuffix [for]="dp">
+			</mat-datepicker-toggle>
+			<mat-datepicker #dp touchUi></mat-datepicker>
+		</mat-form-field>
+	</section>
 
 
+	<div class="event-card" *ngFor="let event of sortedEvents | filter:search.text | filter:search.date">
+		<app-event-card [event]="event"></app-event-card>
+	</div>
 
-  <div class="event-card" *ngFor="let event of EventList | filter:searchText"> 
-    <app-event-card [event]="event"></app-event-card>
-  </div>
-    
-    
+
 </main>

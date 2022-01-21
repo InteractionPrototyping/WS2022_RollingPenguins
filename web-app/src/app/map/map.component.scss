@@ -3,11 +3,14 @@ main {
     height: calc(100% - 72px);
     width: 100%;
 }
+::ng-deep .mat-form-field-wrapper {
+  max-height: 64px;
+}
 #search {
   position: fixed;
   top: 16px;
   left: 16px;
-  width: calc(100% - 32px);
+  width: calc(100% - 32px - 8px - 64px);
   z-index: 1;
   ::ng-deep .mat-form-field-flex {
     background-color: rgb(45, 45, 45);
@@ -17,6 +20,31 @@ main {
     width: calc(100% - 16px);
     margin-left: 8px;
   }
+}
+#datepicker {
+  position: fixed;
+  top: 88px;
+  left: 16px;
+  width: calc(100% - 32px);
+  z-index: 1;
+  ::ng-deep .mat-form-field-flex {
+      background-color: rgb(45, 45, 45);
+      border-radius: 4px;
+    }
+    ::ng-deep .mat-form-field-underline {
+      width: calc(100% - 8px);
+      margin-left: 4px;
+    }
+}
+
+#toggleFilterBtn {
+  height: 64px;
+  width: 64px;
+  position: fixed;
+  z-index: 1;
+  top: 16px;
+  right: 16px;
+  background-color: #2d2d2d;
 }
 
 

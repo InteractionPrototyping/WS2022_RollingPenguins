@@ -1,9 +1,23 @@
 <main>
-    <mat-form-field id="search" appearance="fill">
-        <mat-label>Search</mat-label>
-        <input matInput class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder='e.g. "Cafe"'>
-        <mat-icon matSuffix>search</mat-icon>
-      </mat-form-field>
+    <nav>
+        <mat-form-field id="search" class="full-width" appearance="fill">
+            <mat-label>Search</mat-label>
+            <input matInput class="form-control" type="text" name="search" [(ngModel)]="search.text" autocomplete="off" placeholder='e.g. "Cafe"'>
+            <mat-icon matSuffix (click)=emptySearch()>{{searchIcon}}</mat-icon>
+        </mat-form-field>
+        <button id="toggleFilterBtn" mat-flat-button (click)=toggleFilter()><mat-icon> {{filterIcon}}</mat-icon></button>
+    </nav>
+    <section *ngIf="showAdditionalFilters">
+    <mat-form-field id="datepicker" class="full-width" appearance="fill">
+        <mat-label>Date</mat-label>
+        <input matInput [matDatepicker]="dp" #dateElem [(ngModel)]="emptyVal">
+        <mat-datepicker-toggle matSuffix [for]="dp">
+        </mat-datepicker-toggle>
+        <mat-datepicker #dp touchUi></mat-datepicker>      
+    </mat-form-field>
+    </section>
+
+
     <google-map 
         height="100%" 
         width="100%"
@@ -13,7 +27,7 @@
         (mapClick)="hideMapCard()"
         >
         <map-marker id="event-marker"
-            *ngFor="let marker of EventMarker | filter:searchText"
+            *ngFor="let marker of EventMarker | filter:search.text | filter:search.date"
             [position]="marker.position"
             [icon]="marker.icon"
             [title]="marker.assignedEvent.name"

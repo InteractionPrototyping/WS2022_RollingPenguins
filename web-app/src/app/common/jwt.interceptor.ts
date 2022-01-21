@@ -1,3 +1,4 @@
+/* intercepts http requests from the application to add a JWT auth token to the Authorization header if the user is logged in */
 import { Injectable } from '@angular/core';
 import { HttpRequest, HttpHandler, HttpEvent, HttpInterceptor } from '@angular/common/http';
 import { Observable } from 'rxjs';

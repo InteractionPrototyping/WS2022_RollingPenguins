@@ -1,7 +1,3 @@
-#profile-form {
-    max-width: 500px;
-}
-  
 .full-width {
     width: 100%;
 }
@@ -31,10 +27,8 @@ main {
 
 h1 {
     text-align: center;
-    font-size: 2em;
 }
-p {
-    text-align: center;
-    font-size: 2em;
-    margin-bottom: 80px;
+a, button {
+    float: right;
+    margin-bottom: 16px;
 }

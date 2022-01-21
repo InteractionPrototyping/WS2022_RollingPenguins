@@ -16,7 +16,9 @@ const routes: Routes = [
   { path: 'map', component: MapComponent, canActivate:[AuthGuard]  },
   { path: 'events', component: EventsComponent, canActivate:[AuthGuard]  },
   { path: 'profile', component: PersonalComponent, canActivate:[AuthGuard]  },
+  { path: 'explore/event-detail-page/:id', component: EventDetailPageComponent, canActivate:[AuthGuard]  },
   { path: 'event-detail-page/:id', component: EventDetailPageComponent, canActivate:[AuthGuard]  },
+  { path: 'logout', component: LoginComponent },
   { path: '**', redirectTo: 'explore' },
 ];
 

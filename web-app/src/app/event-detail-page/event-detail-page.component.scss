@@ -1,9 +1,21 @@
+@import '~@angular/material/theming'; // styling of material design components
 main {
-    margin: 0px 16px;
+    padding: 0px 16px;
+    padding-bottom: 32px;
+}
+img {
+    margin-left: -16px;
+    max-height: 70vh;
+    width: 100vw;
+    object-fit: cover;
+    margin-bottom: 16px;
 }
 mat-card-actions {
-    text-align: right;
-    margin-right: 16px;
+    display: flex;
+    justify-content: flex-end;
+}
+mat-card-title, mat-card-subtitle {
+    display: block;
 }
 #google-map-container {
     height: calc(60vw - 56px);
@@ -14,4 +26,22 @@ google-map {
     width: calc(100vw - 32px);
     height: calc(60vw - 32px);
     display: block;
+}
+
+mat-card-subtitle {
+    display: flex;
+    flex-direction: row;
+    div {
+        margin-right: 24px;
+        height: 32px;
+        display: flex;
+        flex-direction: row;
+        mat-icon {
+            margin-right: 8px;
+            height: 32px;
+        }
+        span {
+            height: 32px;
+        }
+    }
 }
