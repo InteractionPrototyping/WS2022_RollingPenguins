@@ -1,3 +1,0 @@
-For the clickable paper prototype we decided on using Figma instead of Marvel. The result is the same: We scanned the paper prototypes, uploaded them to Figma, and created click- and drag-able areas for the interaction (Swipe-Tab allows swiping the cards to the left for the first card and to the right for the following two cards).
-
-https://www.figma.com/proto/sfUddoqSXUk9x1Xqb2HQ49/Event-Finder?node-id=23%3A7&scaling=min-zoom&page-id=4%3A2&starting-point-node-id=23%3A7&show-proto-sidebar=1
