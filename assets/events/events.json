@@ -4,7 +4,7 @@
     "name": "Wine Tasting",
     "saved": false,
     "description": "Stroll through the city with our sommelier, a glass of wine in hand, have a bite to eat at various culinary hot spots and experience real street pairing! These are our gourmet tours throughout Munich! In doing so, we show what Munich freedom means: Pleasurable enjoyment on the go, simple yet brilliant tastes from all over the world!",
-    "date": "January 25, 2022",
+    "date": "September 17, 2022",
     "time": "19:00",
     "picture": "./assets/events/hero-images/winetasting.jpeg",
     "position": {
@@ -46,7 +46,7 @@
     "name": "Live Music and wine at Crönlein",
     "saved": false,
     "description": "Crönlein is a very special place, tiny and cosy. To listen to live music you need to sit outside in the park nearby as the bar can hold max 10 people - without sitting down. The wine is excellent, but next to the former Brauerei Paulaner their excellent beer selection needs to be highlighted as well.",
-    "date": "March 2, 2022",
+    "date": "September 18, 2022",
     "time": "14:00",
     "picture": "./assets/events/hero-images/croenlein.jpg",
     "position": {
@@ -60,7 +60,7 @@
     "name": "Wine Festival at Olympiapark",
     "saved": false,
     "description": "Olympiapark is not just famous for its UNESCO protected architecture. It is a fantastic place for events, like this wine festival. What the sunset while having a good glass of wine. Beer lovers and non alcohol drinkers are welcome and served well as well.",
-    "date": "April 12, 2022",
+    "date": "September 18, 2022",
     "time": "13:30",
     "picture": "./assets/events/hero-images/olympiapark.jpg",
     "position": {
@@ -74,7 +74,7 @@
     "name": "Cafe Kosmos Event",
     "saved": false,
     "description": "The old Kosmos! A refuge in the hectic HbfViertel and a great place to spend a night, despite the usual capacity crowd. It is a cafe after all, despite its secret identity as an indispensable part of the MUC party scene, and one can relish a strong coffee during the week and a cold Astra on Saturday.",
-    "date": "September 12, 2022",
+    "date": "September 18, 2022",
     "time": "15:00",
     "picture": "./assets/events/hero-images/kosmos.jpg",
     "position": {
@@ -88,7 +88,7 @@
     "name": "Cafe Johannis and JukeBox",
     "saved": false,
     "description": "Nostalgic environment with friendly service. The bar is known among many locals and has a legendary history. They serve a beer like a golden sandwich... Does God even exist? Yes, and his name is Johannis",
-    "date": "February 15, 2022",
+    "date": "September 19, 2022",
     "time": "15:00",
     "picture": "./assets/events/hero-images/johannis.jpg",
     "position": {
@@ -102,7 +102,7 @@
     "name": "Bummsvoll Bar as an Event itself",
     "saved": false,
     "description": "This bar is a dinosaur in Obergiesing and definitely every visit an event by itself. Different names different hosts, super small, super local, super young crowd - other than expected. They serve Giesinger Bräu on tap.",
-    "date": "March 22, 2022",
+    "date": "September 22, 2022",
     "time": "17:00",
     "picture": "./assets/events/hero-images/bummsvoll.jpg",
     "position": {
@@ -116,7 +116,7 @@
     "name": "Gorilla Bar",
     "saved": false,
     "description": "Classic and creative cocktails in a compact, industrial-style bar with quirky decor. Fantastic service with super friendly bartender. The drinks are phenomenal, you can tell they put their heart into it",
-    "date": "March 2, 2022",
+    "date": "September 19, 2022",
     "time": "17:30",
     "picture": "./assets/events/hero-images/gorilla.jpg",
     "position": {
@@ -130,7 +130,7 @@
     "name": "Bar Sehnsucht / Restaurant",
     "saved": false,
     "description": "Biker-style venue with rock music, a collection of bras above the bar & a motorbike on the wall. The best of music, rock with a glimpse of old school rap hip hop. The atmosphere is great, with greatly made classic drinks. The unfriendliness of the bar tender is part of the concept. So do not feel confused, they love you!",
-    "date": "May 13, 2022",
+    "date": "September 19, 2022",
     "time": "18:00",
     "picture": "./assets/events/hero-images/sehnsucht.jpg",
     "position": {
