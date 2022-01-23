@@ -65,7 +65,7 @@ export class ExploreComponent {
 	*/ 
 	get sortedEvents() {
 		return this.cloneEvents.sort((a, b) => {
-			return <any>moment(a.date, "MMMM Do, YYYY") - <any>moment(b.date, "MMMM Do, YYYY")
+			return <any>moment(a.date + ", " + a.time, "MMMM D, YYYY, h:mm") - <any>moment(b.date + ", " + b.time, "MMMM Do, YYYY, h:mm")
 		});
 	}
 
